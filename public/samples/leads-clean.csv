@@ -1,0 +1,501 @@
+full_name,email,company,title,industry,company_size,phone
+Trần Xuân Lan,tran.xuan.lan.0@cenland.vn,CenLand,Sales Director,retail,10,0934683029
+Phạm Quang Việt,pham.quang.viet.1@fptsoftware.vn,FPT Software,Product Manager,fintech,120,0861576424
+Phan Quang Khánh,phan.quang.khanh.2@viettiengarm.vn,Viet Tien Garment,Kế toán trưởng,retail,25,0973634749
+Lê Xuân Lan,le.xuan.lan.3@vinamilk.vn,Vinamilk,Sales Director,manufacturing,10,0907569603
+Đặng Đức Trang,dang.duc.trang.4@pharmacity.vn,Pharmacity,Head of Finance,education,10,0934741333
+Lê Quang Lan,le.quang.lan.5@duytanplasti.vn,Duy Tan Plastics,Sales Director,manufacturing,500,0706890824
+Hồ Xuân Châu,ho.xuan.chau.6@gmail.com,Vinmec,Kế toán trưởng,education,50,0327870440
+Đặng Thanh Tâm,dang.thanh.tam.7@gmail.com,Pharmacity,CFO,logistics,10,0935178057
+Lý Đức Dũng,ly.duc.dung.8@thecoffeehou.vn,The Coffee House,CTO,manufacturing,500,0701685102
+Ngô Văn An,ngo.van.an.9@gmail.com,Base.vn,CTO,software,120,0354135992
+Nguyễn Hữu Việt,nguyen.huu.viet.10@pnj.vn,PNJ,Procurement Manager,retail,1500,0902219060
+Phan Quang Dũng,phan.quang.dung.11@hoaphat.vn,Hoà Phát,Kế toán trưởng,logistics,25,0913329813
+Phạm Quang Hà,pham.quang.ha.12@hoaphat.vn,Hoà Phát,Kế toán trưởng,logistics,250,0350796267
+Bùi Thị Trang,bui.thi.trang.13@thacoindustr.vn,Thaco Industries,Sales Director,software,1500,0706713250
+Dương Quang Lan,duong.quang.lan.14@tiki.vn,Tiki,Procurement Manager,logistics,25,0701852562
+Ngô Quang Tuấn,ngo.quang.tuan.15@gmail.com,Viet Tien Garment,Marketing Manager,ecommerce,500,0974805307
+Đặng Hữu Nam,dang.huu.nam.16@kiotviet.vn,KiotViet,CTO,software,500,0963838630
+Phạm Ngọc Lan,pham.ngoc.lan.17@gmail.com,MoMo,Procurement Manager,fintech,500,0919509375
+Trần Thị Châu,tran.thi.chau.18@gmail.com,MoMo,CEO,healthcare,10,0971279409
+Nguyễn Minh Mai,nguyen.minh.mai.19@thecoffeehou.vn,The Coffee House,Marketing Manager,manufacturing,500,0708702458
+Phạm Thanh Khánh,pham.thanh.khanh.20@gmail.com,Duy Tan Plastics,Head of Finance,software,25,0863850708
+Nguyễn Thanh Dũng,nguyen.thanh.dung.21@kiotviet.vn,KiotViet,Head of Finance,logistics,500,0908915270
+Võ Xuân Quân,vo.xuan.quan.22@tiki.vn,Tiki,CFO,education,120,0917869221
+Đặng Minh Khánh,dang.minh.khanh.23@gmail.com,PNJ,CEO,manufacturing,25,0979166249
+Phan Xuân Tâm,phan.xuan.tam.24@basevn.vn,Base.vn,Marketing Manager,retail,500,0967295248
+Ngô Quang Khánh,ngo.quang.khanh.25@basevn.vn,Base.vn,CTO,healthcare,1500,0933589921
+Võ Hồng Phúc,vo.hong.phuc.26@tiki.vn,Tiki,Product Manager,healthcare,1500,0869092349
+Bùi Minh Khánh,bui.minh.khanh.27@pharmacity.vn,Pharmacity,CTO,fintech,50,0915259802
+Vũ Thanh Khánh,vu.thanh.khanh.28@haravan.vn,Haravan,CFO,education,250,0967553497
+Ngô Thị Mai,ngo.thi.mai.29@gmail.com,Base.vn,Kế toán trưởng,software,25,0706601001
+Lý Hữu Giang,ly.huu.giang.30@haravan.vn,Haravan,Sales Director,ecommerce,120,0935758169
+Lê Quang Oanh,le.quang.oanh.31@kiotviet.vn,KiotViet,Head of Finance,manufacturing,1500,0908134403
+Phan Ngọc Việt,phan.ngoc.viet.32@gemadeptlogi.vn,Gemadept Logistics,Procurement Manager,manufacturing,10,0323099566
+Dương Quang Nam,duong.quang.nam.33@gmail.com,Shopee Vietnam,Sales Director,fintech,10,0967287680
+Lê Ngọc Việt,le.ngoc.viet.34@vngcorporati.vn,VNG Corporation,CEO,fintech,10,0933941200
+Vũ Hồng Giang,vu.hong.giang.35@gmail.com,Base.vn,Marketing Manager,manufacturing,25,0972217294
+Lê Xuân Quân,le.xuan.quan.36@gmail.com,The Coffee House,Operations Manager,education,50,0976286845
+Lê Minh Quân,le.minh.quan.37@gmail.com,Thaco Industries,CEO,software,120,0702458105
+Phan Đức Sơn,phan.duc.son.38@gmail.com,Vinmec,Sales Director,education,1500,0908065960
+Đỗ Đức Tâm,do.duc.tam.39@fptsoftware.vn,FPT Software,Marketing Manager,fintech,250,0357841230
+Đỗ Văn Bình,do.van.binh.40@pharmacity.vn,Pharmacity,CFO,ecommerce,500,0322480951
+Ngô Văn Lan,ngo.van.lan.41@gmail.com,Gemadept Logistics,Procurement Manager,logistics,25,0910515881
+Hoàng Quang Khánh,hoang.quang.khanh.42@vinamilk.vn,Vinamilk,Operations Manager,ecommerce,50,0961649822
+Hồ Hồng An,ho.hong.an.43@topcv.vn,TopCV,Operations Manager,logistics,1500,0359230815
+Võ Hữu Khánh,vo.huu.khanh.44@tiki.vn,Tiki,CEO,ecommerce,250,0909538139
+Phạm Xuân Bình,pham.xuan.binh.45@hoaphat.vn,Hoà Phát,CFO,ecommerce,120,0321493724
+Võ Hồng Quân,vo.hong.quan.46@duytanplasti.vn,Duy Tan Plastics,Procurement Manager,healthcare,50,0705217605
+Nguyễn Minh Nam,nguyen.minh.nam.47@gmail.com,Vinmec,CEO,retail,500,0703578483
+Phạm Đức Quân,pham.duc.quan.48@thecoffeehou.vn,The Coffee House,Marketing Manager,fintech,120,0964166674
+Ngô Hồng Tuấn,ngo.hong.tuan.49@vinamilk.vn,Vinamilk,CTO,software,1500,0960697994
+Phạm Văn Hà,pham.van.ha.50@topcv.vn,TopCV,CEO,education,500,0351076330
+Lý Hữu Trang,ly.huu.trang.51@viettiengarm.vn,Viet Tien Garment,Procurement Manager,fintech,250,0933848522
+Nguyễn Hồng Tâm,nguyen.hong.tam.52@shopeevietna.vn,Shopee Vietnam,Product Manager,manufacturing,1500,0704605720
+Nguyễn Thị Giang,nguyen.thi.giang.53@viettiengarm.vn,Viet Tien Garment,Sales Director,ecommerce,50,0977146923
+Đặng Thị Oanh,dang.thi.oanh.54@gmail.com,Thaco Industries,Head of Finance,software,120,0865236844
+Ngô Thị Trang,ngo.thi.trang.55@pnj.vn,PNJ,Operations Manager,ecommerce,25,0936142517
+Dương Minh Khánh,duong.minh.khanh.56@gemadeptlogi.vn,Gemadept Logistics,CEO,logistics,500,0704851255
+Ngô Xuân Giang,ngo.xuan.giang.57@basevn.vn,Base.vn,Head of Finance,fintech,1500,0973532674
+Lê Quang Lan,le.quang.lan.58@gmail.com,Vinamilk,Operations Manager,fintech,10,0357215925
+Phạm Xuân Linh,pham.xuan.linh.59@basevn.vn,Base.vn,Sales Director,fintech,50,0868561481
+Lý Hữu Phúc,ly.huu.phuc.60@gmail.com,Base.vn,CFO,logistics,50,0702887220
+Nguyễn Xuân Linh,nguyen.xuan.linh.61@gmail.com,Duy Tan Plastics,Kế toán trưởng,healthcare,1500,0907506239
+Hồ Văn Phúc,ho.van.phuc.62@fptsoftware.vn,FPT Software,Sales Director,logistics,10,0905382315
+Lý Đức Sơn,ly.duc.son.63@momo.vn,MoMo,Sales Director,fintech,500,0701125983
+Nguyễn Hồng Nam,nguyen.hong.nam.64@shopeevietna.vn,Shopee Vietnam,Product Manager,fintech,50,0701117106
+Hồ Xuân Lan,ho.xuan.lan.65@gmail.com,Pharmacity,Head of Finance,ecommerce,120,0911934933
+Đặng Văn An,dang.van.an.66@topcv.vn,TopCV,CEO,ecommerce,250,0355282719
+Hồ Hồng Lan,ho.hong.lan.67@gemadeptlogi.vn,Gemadept Logistics,Sales Director,logistics,10,0967495384
+Đặng Thanh Tuấn,dang.thanh.tuan.68@shopeevietna.vn,Shopee Vietnam,Sales Director,ecommerce,50,0869539004
+Đặng Văn Dũng,dang.van.dung.69@gmail.com,VNG Corporation,CTO,software,10,0961741673
+Nguyễn Thanh Sơn,nguyen.thanh.son.70@thecoffeehou.vn,The Coffee House,Sales Director,ecommerce,25,0908521272
+Nguyễn Minh Hùng,nguyen.minh.hung.71@vinmec.vn,Vinmec,Head of Finance,healthcare,500,0912407729
+Đặng Đức Oanh,dang.duc.oanh.72@vinmec.vn,Vinmec,Product Manager,healthcare,50,0960411801
+Bùi Hồng Lan,bui.hong.lan.73@gmail.com,Viet Tien Garment,CFO,retail,10,0359880498
+Đặng Thanh Hà,dang.thanh.ha.74@gmail.com,Haravan,Product Manager,ecommerce,1500,0907506766
+Đỗ Xuân Khánh,do.xuan.khanh.75@thacoindustr.vn,Thaco Industries,CFO,healthcare,25,0966730557
+Phạm Hữu Sơn,pham.huu.son.76@thecoffeehou.vn,The Coffee House,Marketing Manager,retail,1500,0936771397
+Lê Quang Tâm,le.quang.tam.77@thecoffeehou.vn,The Coffee House,CTO,fintech,10,0910774811
+Bùi Hồng Châu,bui.hong.chau.78@pharmacity.vn,Pharmacity,Marketing Manager,ecommerce,250,0903655039
+Lý Hữu Bình,ly.huu.binh.79@gmail.com,VNG Corporation,Procurement Manager,fintech,25,0937580081
+Đỗ Thanh Giang,do.thanh.giang.80@haravan.vn,Haravan,CEO,healthcare,10,0916194015
+Dương Đức Khánh,duong.duc.khanh.81@gemadeptlogi.vn,Gemadept Logistics,Operations Manager,ecommerce,50,0709491895
+Đỗ Văn Tâm,do.van.tam.82@vinmec.vn,Vinmec,Sales Director,fintech,500,0976162701
+Phạm Quang Tuấn,pham.quang.tuan.83@fptsoftware.vn,FPT Software,CEO,manufacturing,50,0914326292
+Lý Thị Việt,ly.thi.viet.84@gmail.com,VNG Corporation,CEO,logistics,25,0936054193
+Hoàng Thanh Tuấn,hoang.thanh.tuan.85@gmail.com,Shopee Vietnam,Product Manager,manufacturing,120,0978475058
+Võ Minh An,vo.minh.an.86@cenland.vn,CenLand,Kế toán trưởng,ecommerce,50,0962402484
+Đặng Hữu Tâm,dang.huu.tam.87@cenland.vn,CenLand,Sales Director,fintech,10,0900660845
+Trần Hữu Bình,tran.huu.binh.88@shopeevietna.vn,Shopee Vietnam,Head of Finance,retail,1500,0906486887
+Trần Hồng Sơn,tran.hong.son.89@duytanplasti.vn,Duy Tan Plastics,Head of Finance,software,500,0936036131
+Dương Xuân Oanh,duong.xuan.oanh.90@hoaphat.vn,Hoà Phát,CFO,logistics,10,0321092966
+Đỗ Ngọc Giang,do.ngoc.giang.91@thacoindustr.vn,Thaco Industries,CEO,healthcare,10,0978276617
+Ngô Thị Trang,ngo.thi.trang.92@thacoindustr.vn,Thaco Industries,Product Manager,healthcare,10,0359814533
+Trần Văn Hùng,tran.van.hung.93@vinamilk.vn,Vinamilk,Product Manager,software,50,0708160926
+Võ Hồng Giang,vo.hong.giang.94@gmail.com,Base.vn,Marketing Manager,manufacturing,250,0976955654
+Phạm Hồng Giang,pham.hong.giang.95@vinmec.vn,Vinmec,Procurement Manager,education,25,0902511930
+Võ Thanh Linh,vo.thanh.linh.96@tiki.vn,Tiki,CEO,logistics,1500,0905861040
+Ngô Hồng Hùng,ngo.hong.hung.97@gmail.com,Duy Tan Plastics,Sales Director,retail,10,0706143969
+Hồ Xuân Hùng,ho.xuan.hung.98@viettiengarm.vn,Viet Tien Garment,Procurement Manager,logistics,120,0916660258
+Phạm Hữu Trang,pham.huu.trang.99@vngcorporati.vn,VNG Corporation,Kế toán trưởng,fintech,25,0960643894
+Hoàng Thanh Lan,hoang.thanh.lan.100@gmail.com,The Coffee House,CTO,software,25,0909659671
+Hoàng Thanh Tâm,hoang.thanh.tam.101@haravan.vn,Haravan,CFO,ecommerce,250,0869502691
+Ngô Hữu Bình,ngo.huu.binh.102@pharmacity.vn,Pharmacity,Procurement Manager,logistics,250,0707439231
+Phan Hồng Dũng,phan.hong.dung.103@vinamilk.vn,Vinamilk,Kế toán trưởng,education,120,0937541913
+Đặng Ngọc Hùng,dang.ngoc.hung.104@tiki.vn,Tiki,Product Manager,manufacturing,1500,0938068285
+Hoàng Văn Phúc,hoang.van.phuc.105@basevn.vn,Base.vn,CTO,software,10,0321252447
+Vũ Đức Trang,vu.duc.trang.106@momo.vn,MoMo,Marketing Manager,ecommerce,500,0354318923
+Bùi Xuân Tâm,bui.xuan.tam.107@duytanplasti.vn,Duy Tan Plastics,Marketing Manager,software,120,0353245077
+Phạm Đức Dũng,pham.duc.dung.108@vinamilk.vn,Vinamilk,Kế toán trưởng,healthcare,25,0935116362
+Hoàng Hữu Nam,hoang.huu.nam.109@tiki.vn,Tiki,CTO,software,120,0912014134
+Lê Thị Châu,le.thi.chau.110@pharmacity.vn,Pharmacity,Head of Finance,education,500,0358516482
+Đỗ Văn Khánh,do.van.khanh.111@gmail.com,KiotViet,Procurement Manager,education,25,0359536356
+Hoàng Thanh Mai,hoang.thanh.mai.112@gmail.com,Gemadept Logistics,Operations Manager,fintech,120,0970750879
+Đỗ Hồng Sơn,do.hong.son.113@basevn.vn,Base.vn,Kế toán trưởng,ecommerce,1500,0975332974
+Đặng Hữu Khánh,dang.huu.khanh.114@haravan.vn,Haravan,Head of Finance,education,1500,0706519857
+Dương Minh Nam,duong.minh.nam.115@gmail.com,Thaco Industries,CTO,healthcare,1500,0905676566
+Trần Thị Hà,tran.thi.ha.116@pharmacity.vn,Pharmacity,Marketing Manager,healthcare,10,0912971019
+Vũ Hữu Tâm,vu.huu.tam.117@thacoindustr.vn,Thaco Industries,CFO,retail,1500,0863473224
+Phạm Xuân Phúc,pham.xuan.phuc.118@pharmacity.vn,Pharmacity,Head of Finance,fintech,25,0706147889
+Võ Thanh Bình,vo.thanh.binh.119@vinmec.vn,Vinmec,CFO,ecommerce,250,0933371017
+Nguyễn Hồng Mai,nguyen.hong.mai.120@basevn.vn,Base.vn,Sales Director,software,50,0961530136
+Ngô Quang An,ngo.quang.an.121@topcv.vn,TopCV,CEO,ecommerce,10,0321946330
+Ngô Đức Giang,ngo.duc.giang.122@gmail.com,Base.vn,Kế toán trưởng,ecommerce,1500,0702805821
+Hồ Thanh Trang,ho.thanh.trang.123@gmail.com,MoMo,CEO,ecommerce,10,0320450693
+Võ Minh Trang,vo.minh.trang.124@thecoffeehou.vn,The Coffee House,Kế toán trưởng,ecommerce,10,0909541906
+Đặng Xuân Quân,dang.xuan.quan.125@vinmec.vn,Vinmec,Head of Finance,education,10,0937860894
+Phan Minh Oanh,phan.minh.oanh.126@gmail.com,MoMo,Product Manager,retail,120,0930007799
+Lê Văn Phúc,le.van.phuc.127@haravan.vn,Haravan,Head of Finance,manufacturing,50,0935198896
+Dương Xuân Linh,duong.xuan.linh.128@fptsoftware.vn,FPT Software,Sales Director,logistics,1500,0320088401
+Trần Ngọc Lan,tran.ngoc.lan.129@pnj.vn,PNJ,CFO,retail,250,0961413419
+Đỗ Ngọc Việt,do.ngoc.viet.130@gmail.com,Haravan,Product Manager,retail,250,0703522022
+Hồ Hồng Sơn,ho.hong.son.131@gmail.com,Haravan,Sales Director,ecommerce,500,0962717306
+Bùi Văn Linh,bui.van.linh.132@pnj.vn,PNJ,CTO,retail,1500,0907342449
+Dương Ngọc Trang,duong.ngoc.trang.133@basevn.vn,Base.vn,Procurement Manager,software,500,0321666093
+Ngô Thị Oanh,ngo.thi.oanh.134@vngcorporati.vn,VNG Corporation,Marketing Manager,manufacturing,500,0970003938
+Bùi Xuân Phúc,bui.xuan.phuc.135@shopeevietna.vn,Shopee Vietnam,Head of Finance,healthcare,10,0911714552
+Dương Quang Dũng,duong.quang.dung.136@gmail.com,Gemadept Logistics,Marketing Manager,fintech,1500,0903254446
+Phạm Minh Hà,pham.minh.ha.137@tiki.vn,Tiki,Product Manager,healthcare,1500,0907088494
+Đặng Minh Tâm,dang.minh.tam.138@gemadeptlogi.vn,Gemadept Logistics,Head of Finance,education,10,0320205921
+Võ Văn Khánh,vo.van.khanh.139@gmail.com,Vinamilk,Procurement Manager,manufacturing,250,0919140113
+Trần Quang Nam,tran.quang.nam.140@momo.vn,MoMo,CEO,retail,500,0320001593
+Hồ Đức Trang,ho.duc.trang.141@gmail.com,Base.vn,CTO,software,10,0867164092
+Đặng Minh Linh,dang.minh.linh.142@thacoindustr.vn,Thaco Industries,CFO,logistics,120,0935282081
+Đỗ Hữu Quân,do.huu.quan.143@gmail.com,Pharmacity,Kế toán trưởng,logistics,10,0866655112
+Nguyễn Thanh Dũng,nguyen.thanh.dung.144@gmail.com,Pharmacity,Kế toán trưởng,education,250,0967419872
+Võ Văn An,vo.van.an.145@pharmacity.vn,Pharmacity,CFO,education,120,0321442187
+Đặng Đức Oanh,dang.duc.oanh.146@gmail.com,Vinamilk,Marketing Manager,logistics,1500,0700300420
+Bùi Ngọc Tâm,bui.ngoc.tam.147@gmail.com,VNG Corporation,CEO,manufacturing,1500,0917458337
+Lê Thị Lan,le.thi.lan.148@basevn.vn,Base.vn,CFO,healthcare,50,0937879148
+Lý Thị Quân,ly.thi.quan.149@shopeevietna.vn,Shopee Vietnam,Operations Manager,education,10,0939552421
+Hoàng Hồng Mai,hoang.hong.mai.150@hoaphat.vn,Hoà Phát,Head of Finance,education,1500,0862673487
+Đỗ Văn Bình,do.van.binh.151@vinmec.vn,Vinmec,CTO,software,25,0323616182
+Nguyễn Hữu Hùng,nguyen.huu.hung.152@gmail.com,Vinamilk,CFO,manufacturing,50,0972405687
+Trần Minh Sơn,tran.minh.son.153@gmail.com,CenLand,CEO,manufacturing,120,0912372882
+Ngô Văn Khánh,ngo.van.khanh.154@vngcorporati.vn,VNG Corporation,CFO,education,500,0963914561
+Hoàng Thị Sơn,hoang.thi.son.155@cenland.vn,CenLand,Head of Finance,software,1500,0902036950
+Dương Văn Giang,duong.van.giang.156@shopeevietna.vn,Shopee Vietnam,Head of Finance,education,120,0977229636
+Hồ Xuân Mai,ho.xuan.mai.157@gmail.com,TopCV,Head of Finance,healthcare,1500,0902233242
+Đỗ Văn Trang,do.van.trang.158@momo.vn,MoMo,Marketing Manager,healthcare,120,0936145184
+Võ Thanh Tuấn,vo.thanh.tuan.159@gmail.com,Tiki,CTO,healthcare,120,0351916083
+Bùi Hồng Giang,bui.hong.giang.160@gmail.com,PNJ,Operations Manager,manufacturing,25,0964136597
+Ngô Thị Mai,ngo.thi.mai.161@gmail.com,Shopee Vietnam,Kế toán trưởng,retail,50,0963949969
+Lý Hữu Quân,ly.huu.quan.162@gmail.com,Shopee Vietnam,CEO,fintech,120,0967363272
+Võ Đức Oanh,vo.duc.oanh.163@gmail.com,MoMo,Marketing Manager,manufacturing,250,0907099836
+Lý Xuân Phúc,ly.xuan.phuc.164@gmail.com,FPT Software,Marketing Manager,manufacturing,120,0913839156
+Đỗ Hữu Sơn,do.huu.son.165@gmail.com,Viet Tien Garment,CEO,fintech,25,0355755187
+Hồ Ngọc Khánh,ho.ngoc.khanh.166@vinamilk.vn,Vinamilk,Kế toán trưởng,retail,250,0321702382
+Ngô Hồng Phúc,ngo.hong.phuc.167@haravan.vn,Haravan,Marketing Manager,software,500,0978799670
+Hồ Xuân Việt,ho.xuan.viet.168@duytanplasti.vn,Duy Tan Plastics,Operations Manager,retail,120,0864103450
+Đặng Ngọc Sơn,dang.ngoc.son.169@cenland.vn,CenLand,Procurement Manager,software,500,0353410335
+Phan Hữu Châu,phan.huu.chau.170@viettiengarm.vn,Viet Tien Garment,CFO,healthcare,120,0908256778
+Hồ Thị Nam,ho.thi.nam.171@gmail.com,PNJ,Head of Finance,education,120,0964578223
+Ngô Ngọc Hùng,ngo.ngoc.hung.172@viettiengarm.vn,Viet Tien Garment,Product Manager,retail,1500,0973837534
+Dương Đức Bình,duong.duc.binh.173@gmail.com,Pharmacity,CFO,manufacturing,500,0861295832
+Dương Đức Hà,duong.duc.ha.174@basevn.vn,Base.vn,CTO,ecommerce,25,0976505714
+Lý Hữu Linh,ly.huu.linh.175@gmail.com,Haravan,CEO,fintech,120,0971448994
+Ngô Thanh Châu,ngo.thanh.chau.176@vngcorporati.vn,VNG Corporation,Marketing Manager,logistics,120,0326714343
+Trần Xuân Mai,tran.xuan.mai.177@gmail.com,The Coffee House,CEO,fintech,1500,0977070959
+Bùi Thanh Dũng,bui.thanh.dung.178@topcv.vn,TopCV,Marketing Manager,logistics,1500,0356547871
+Phạm Thanh Nam,pham.thanh.nam.179@pharmacity.vn,Pharmacity,Procurement Manager,retail,500,0701306901
+Phạm Xuân Khánh,pham.xuan.khanh.180@momo.vn,MoMo,CFO,ecommerce,120,0352509159
+Hoàng Đức Quân,hoang.duc.quan.181@gmail.com,PNJ,Sales Director,education,250,0936916461
+Phạm Minh Tâm,pham.minh.tam.182@basevn.vn,Base.vn,Operations Manager,fintech,50,0973561174
+Lê Văn Lan,le.van.lan.183@gmail.com,Viet Tien Garment,Product Manager,software,250,0355235843
+Vũ Ngọc Hà,vu.ngoc.ha.184@momo.vn,MoMo,CTO,education,250,0863807347
+Bùi Quang Hà,bui.quang.ha.185@duytanplasti.vn,Duy Tan Plastics,CFO,manufacturing,500,0903764104
+Đỗ Đức Việt,do.duc.viet.186@topcv.vn,TopCV,Operations Manager,ecommerce,1500,0960949114
+Dương Văn Mai,duong.van.mai.187@duytanplasti.vn,Duy Tan Plastics,Head of Finance,healthcare,120,0356835238
+Lý Minh Sơn,ly.minh.son.188@hoaphat.vn,Hoà Phát,Kế toán trưởng,ecommerce,25,0970826539
+Ngô Xuân Châu,ngo.xuan.chau.189@pnj.vn,PNJ,CEO,logistics,500,0865028166
+Vũ Xuân Châu,vu.xuan.chau.190@topcv.vn,TopCV,Procurement Manager,manufacturing,25,0965086369
+Bùi Quang Phúc,bui.quang.phuc.191@duytanplasti.vn,Duy Tan Plastics,CFO,software,50,0968080349
+Lý Văn Dũng,ly.van.dung.192@gmail.com,Vinamilk,Product Manager,retail,50,0326884795
+Đỗ Quang Khánh,do.quang.khanh.193@gmail.com,Shopee Vietnam,Kế toán trưởng,ecommerce,120,0357755678
+Phạm Hữu Dũng,pham.huu.dung.194@fptsoftware.vn,FPT Software,CFO,education,50,0968709269
+Ngô Quang Việt,ngo.quang.viet.195@gmail.com,Vinmec,Product Manager,retail,50,0961551428
+Lê Thanh Oanh,le.thanh.oanh.196@topcv.vn,TopCV,CFO,software,25,0702520494
+Phan Hồng Khánh,phan.hong.khanh.197@shopeevietna.vn,Shopee Vietnam,Product Manager,fintech,10,0351128993
+Dương Văn Linh,duong.van.linh.198@gemadeptlogi.vn,Gemadept Logistics,Product Manager,education,120,0357133983
+Lý Văn Hùng,ly.van.hung.199@shopeevietna.vn,Shopee Vietnam,Product Manager,education,10,0937286675
+Lê Hữu Nam,le.huu.nam.200@gmail.com,CenLand,CTO,retail,500,0967006933
+Phan Hồng Khánh,phan.hong.khanh.201@basevn.vn,Base.vn,CEO,education,500,0868727538
+Võ Ngọc Quân,vo.ngoc.quan.202@thecoffeehou.vn,The Coffee House,Sales Director,healthcare,250,0979669606
+Bùi Xuân Trang,bui.xuan.trang.203@cenland.vn,CenLand,Operations Manager,healthcare,120,0935886420
+Vũ Hồng Trang,vu.hong.trang.204@gemadeptlogi.vn,Gemadept Logistics,Head of Finance,software,50,0327946771
+Dương Xuân Phúc,duong.xuan.phuc.205@tiki.vn,Tiki,Marketing Manager,fintech,250,0910775131
+Phạm Văn Phúc,pham.van.phuc.206@duytanplasti.vn,Duy Tan Plastics,Marketing Manager,fintech,1500,0321548706
+Nguyễn Quang Tâm,nguyen.quang.tam.207@momo.vn,MoMo,Head of Finance,software,1500,0352237950
+Nguyễn Đức Sơn,nguyen.duc.son.208@momo.vn,MoMo,CEO,ecommerce,250,0350122371
+Phạm Quang Sơn,pham.quang.son.209@gmail.com,Duy Tan Plastics,Sales Director,logistics,120,0701579073
+Hồ Hồng Sơn,ho.hong.son.210@momo.vn,MoMo,Kế toán trưởng,education,50,0913694397
+Vũ Thanh Hà,vu.thanh.ha.211@pnj.vn,PNJ,CFO,software,25,0707481770
+Ngô Xuân Linh,ngo.xuan.linh.212@pnj.vn,PNJ,Head of Finance,software,120,0705294151
+Bùi Thanh Dũng,bui.thanh.dung.213@kiotviet.vn,KiotViet,CFO,education,500,0915536443
+Đặng Văn Oanh,dang.van.oanh.214@gmail.com,Tiki,Procurement Manager,fintech,250,0939939923
+Lê Đức Mai,le.duc.mai.215@hoaphat.vn,Hoà Phát,CTO,retail,1500,0966275906
+Vũ Minh Hùng,vu.minh.hung.216@gmail.com,Pharmacity,Marketing Manager,software,1500,0706534658
+Hoàng Hữu Hùng,hoang.huu.hung.217@gmail.com,Tiki,CFO,healthcare,500,0353236153
+Hồ Thanh Châu,ho.thanh.chau.218@kiotviet.vn,KiotViet,Procurement Manager,retail,500,0914605820
+Bùi Thanh Giang,bui.thanh.giang.219@kiotviet.vn,KiotViet,CEO,logistics,25,0356171605
+Vũ Hồng Quân,vu.hong.quan.220@gmail.com,CenLand,CTO,healthcare,120,0705705747
+Ngô Hữu Giang,ngo.huu.giang.221@pharmacity.vn,Pharmacity,CTO,education,25,0934518839
+Nguyễn Thị Sơn,nguyen.thi.son.222@gmail.com,Shopee Vietnam,CEO,ecommerce,10,0320485319
+Nguyễn Quang Khánh,nguyen.quang.khanh.223@duytanplasti.vn,Duy Tan Plastics,Product Manager,healthcare,500,0975977938
+Hồ Minh Sơn,ho.minh.son.224@gmail.com,Tiki,Procurement Manager,healthcare,120,0962926849
+Phan Xuân Giang,phan.xuan.giang.225@pnj.vn,PNJ,CFO,education,1500,0934045191
+Võ Văn Hà,vo.van.ha.226@viettiengarm.vn,Viet Tien Garment,Procurement Manager,education,120,0918920862
+Lê Quang Việt,le.quang.viet.227@momo.vn,MoMo,CFO,retail,120,0321894471
+Trần Xuân Mai,tran.xuan.mai.228@gmail.com,TopCV,Procurement Manager,logistics,10,0329299844
+Phan Xuân Dũng,phan.xuan.dung.229@hoaphat.vn,Hoà Phát,Product Manager,healthcare,120,0327521542
+Phan Văn Nam,phan.van.nam.230@gmail.com,VNG Corporation,Operations Manager,software,250,0972559943
+Đặng Thị Mai,dang.thi.mai.231@gmail.com,Tiki,Operations Manager,education,120,0861354607
+Lê Đức Dũng,le.duc.dung.232@gmail.com,CenLand,Product Manager,ecommerce,25,0934277697
+Lê Đức Linh,le.duc.linh.233@kiotviet.vn,KiotViet,Head of Finance,education,120,0706091305
+Đỗ Đức Việt,do.duc.viet.234@tiki.vn,Tiki,Operations Manager,fintech,10,0905291830
+Hồ Hồng Giang,ho.hong.giang.235@gmail.com,Base.vn,CTO,retail,120,0912934106
+Phạm Xuân Giang,pham.xuan.giang.236@basevn.vn,Base.vn,Marketing Manager,ecommerce,500,0328782003
+Vũ Đức Dũng,vu.duc.dung.237@vinamilk.vn,Vinamilk,CEO,education,120,0913505715
+Dương Xuân Lan,duong.xuan.lan.238@fptsoftware.vn,FPT Software,Product Manager,education,25,0328595029
+Lý Ngọc Giang,ly.ngoc.giang.239@haravan.vn,Haravan,CEO,healthcare,120,0356392547
+Đỗ Quang Hùng,do.quang.hung.240@gmail.com,Shopee Vietnam,Head of Finance,software,50,0866499738
+Hồ Thanh Linh,ho.thanh.linh.241@gmail.com,Haravan,Sales Director,retail,120,0702116031
+Nguyễn Ngọc Khánh,nguyen.ngoc.khanh.242@pharmacity.vn,Pharmacity,Product Manager,fintech,50,0937251087
+Hồ Ngọc Tuấn,ho.ngoc.tuan.243@gmail.com,VNG Corporation,Head of Finance,healthcare,10,0350124983
+Lý Văn Bình,ly.van.binh.244@pnj.vn,PNJ,Procurement Manager,software,1500,0937098588
+Ngô Thanh Trang,ngo.thanh.trang.245@gemadeptlogi.vn,Gemadept Logistics,Head of Finance,healthcare,10,0352613646
+Bùi Thị Phúc,bui.thi.phuc.246@haravan.vn,Haravan,Sales Director,manufacturing,25,0916716162
+Phan Thanh Linh,phan.thanh.linh.247@vinamilk.vn,Vinamilk,Procurement Manager,ecommerce,250,0909914148
+Đặng Thị Trang,dang.thi.trang.248@gmail.com,Gemadept Logistics,Kế toán trưởng,fintech,1500,0964850016
+Bùi Minh Hùng,bui.minh.hung.249@gmail.com,VNG Corporation,Marketing Manager,education,120,0354008893
+Hồ Xuân Phúc,ho.xuan.phuc.250@viettiengarm.vn,Viet Tien Garment,CFO,logistics,50,0709979104
+Đỗ Hữu Tâm,do.huu.tam.251@tiki.vn,Tiki,Sales Director,fintech,120,0351810377
+Ngô Thị Giang,ngo.thi.giang.252@gmail.com,Shopee Vietnam,Head of Finance,healthcare,250,0969500512
+Phan Hồng Việt,phan.hong.viet.253@vngcorporati.vn,VNG Corporation,Head of Finance,ecommerce,50,0964383297
+Nguyễn Hồng Oanh,nguyen.hong.oanh.254@tiki.vn,Tiki,CTO,software,120,0904458016
+Vũ Thị Dũng,vu.thi.dung.255@momo.vn,MoMo,Kế toán trưởng,retail,250,0354373099
+Vũ Xuân Tâm,vu.xuan.tam.256@gmail.com,Base.vn,CTO,healthcare,1500,0979442538
+Lý Xuân Lan,ly.xuan.lan.257@basevn.vn,Base.vn,Marketing Manager,logistics,10,0863519837
+Lý Hữu Châu,ly.huu.chau.258@vngcorporati.vn,VNG Corporation,Head of Finance,fintech,25,0939814825
+Hoàng Ngọc Mai,hoang.ngoc.mai.259@kiotviet.vn,KiotViet,CFO,ecommerce,1500,0861084730
+Trần Quang Quân,tran.quang.quan.260@pharmacity.vn,Pharmacity,Head of Finance,logistics,250,0707574741
+Ngô Thị Mai,ngo.thi.mai.261@cenland.vn,CenLand,Sales Director,healthcare,25,0977920864
+Dương Ngọc Khánh,duong.ngoc.khanh.262@vinamilk.vn,Vinamilk,Kế toán trưởng,manufacturing,25,0704984202
+Ngô Hồng Sơn,ngo.hong.son.263@vngcorporati.vn,VNG Corporation,Product Manager,software,10,0703388925
+Trần Hồng Tâm,tran.hong.tam.264@kiotviet.vn,KiotViet,Marketing Manager,software,50,0969662827
+Hoàng Ngọc Bình,hoang.ngoc.binh.265@tiki.vn,Tiki,CTO,retail,50,0326447170
+Hồ Quang Phúc,ho.quang.phuc.266@tiki.vn,Tiki,Product Manager,healthcare,500,0350420699
+Phan Đức Oanh,phan.duc.oanh.267@tiki.vn,Tiki,Procurement Manager,retail,1500,0918359582
+Nguyễn Ngọc Việt,nguyen.ngoc.viet.268@duytanplasti.vn,Duy Tan Plastics,CFO,software,1500,0862654450
+Phạm Đức Lan,pham.duc.lan.269@basevn.vn,Base.vn,Product Manager,logistics,50,0324387734
+Phan Thanh Quân,phan.thanh.quan.270@viettiengarm.vn,Viet Tien Garment,CFO,education,250,0863180166
+Phạm Văn Nam,pham.van.nam.271@duytanplasti.vn,Duy Tan Plastics,Kế toán trưởng,ecommerce,250,0702122510
+Lý Thanh An,ly.thanh.an.272@gmail.com,CenLand,Kế toán trưởng,retail,500,0862023244
+Lý Ngọc Lan,ly.ngoc.lan.273@basevn.vn,Base.vn,Operations Manager,healthcare,50,0902265186
+Vũ Quang Linh,vu.quang.linh.274@vinmec.vn,Vinmec,Product Manager,logistics,50,0355168450
+Nguyễn Đức Trang,nguyen.duc.trang.275@tiki.vn,Tiki,Marketing Manager,healthcare,1500,0320483098
+Đỗ Thị Quân,do.thi.quan.276@gmail.com,Tiki,CEO,fintech,1500,0356620285
+Trần Đức Linh,tran.duc.linh.277@gmail.com,MoMo,Head of Finance,healthcare,25,0967567805
+Trần Thị Bình,tran.thi.binh.278@momo.vn,MoMo,CTO,software,25,0355563743
+Phạm Ngọc Sơn,pham.ngoc.son.279@gemadeptlogi.vn,Gemadept Logistics,Marketing Manager,software,10,0326867544
+Lý Ngọc Tuấn,ly.ngoc.tuan.280@gmail.com,Gemadept Logistics,CEO,healthcare,10,0968272772
+Phan Minh Nam,phan.minh.nam.281@pharmacity.vn,Pharmacity,Head of Finance,manufacturing,25,0354859451
+Hồ Văn Dũng,ho.van.dung.282@kiotviet.vn,KiotViet,Marketing Manager,ecommerce,1500,0700268781
+Nguyễn Quang Bình,nguyen.quang.binh.283@vinmec.vn,Vinmec,Head of Finance,retail,50,0911793182
+Hồ Thanh Hùng,ho.thanh.hung.284@hoaphat.vn,Hoà Phát,CTO,fintech,250,0700109130
+Võ Thanh Mai,vo.thanh.mai.285@gmail.com,Vinmec,Product Manager,education,25,0970885373
+Nguyễn Thanh Lan,nguyen.thanh.lan.286@thacoindustr.vn,Thaco Industries,CTO,education,1500,0913477687
+Nguyễn Ngọc Tâm,nguyen.ngoc.tam.287@vinmec.vn,Vinmec,Procurement Manager,software,250,0912853141
+Phan Hữu Khánh,phan.huu.khanh.288@hoaphat.vn,Hoà Phát,Kế toán trưởng,ecommerce,50,0969017046
+Nguyễn Minh Hà,nguyen.minh.ha.289@hoaphat.vn,Hoà Phát,Operations Manager,software,25,0358301712
+Lê Quang Oanh,le.quang.oanh.290@tiki.vn,Tiki,Product Manager,manufacturing,120,0355481292
+Trần Thị Việt,tran.thi.viet.291@momo.vn,MoMo,Operations Manager,software,25,0352358310
+Hoàng Thanh Việt,hoang.thanh.viet.292@gmail.com,Hoà Phát,Marketing Manager,software,10,0919609316
+Võ Thanh Lan,vo.thanh.lan.293@gmail.com,Shopee Vietnam,Marketing Manager,manufacturing,50,0324979269
+Hồ Minh Quân,ho.minh.quan.294@gmail.com,Gemadept Logistics,Operations Manager,software,10,0911829004
+Bùi Thanh Châu,bui.thanh.chau.295@gmail.com,Hoà Phát,CFO,fintech,25,0708162007
+Đỗ Hồng Châu,do.hong.chau.296@viettiengarm.vn,Viet Tien Garment,Sales Director,education,50,0931386226
+Ngô Quang An,ngo.quang.an.297@pharmacity.vn,Pharmacity,Marketing Manager,software,120,0930455228
+Trần Hồng Nam,tran.hong.nam.298@gmail.com,MoMo,Sales Director,retail,25,0905047856
+Lê Hồng Giang,le.hong.giang.299@viettiengarm.vn,Viet Tien Garment,Marketing Manager,education,120,0865286027
+Bùi Quang Trang,bui.quang.trang.300@kiotviet.vn,KiotViet,Kế toán trưởng,ecommerce,25,0901129141
+Vũ Văn Hà,vu.van.ha.301@haravan.vn,Haravan,CEO,manufacturing,10,0704783858
+Ngô Thị Phúc,ngo.thi.phuc.302@gmail.com,Vinamilk,CFO,fintech,120,0961717716
+Đỗ Thanh Trang,do.thanh.trang.303@pharmacity.vn,Pharmacity,Kế toán trưởng,software,50,0328151890
+Trần Hữu Lan,tran.huu.lan.304@basevn.vn,Base.vn,Product Manager,fintech,25,0869447130
+Lê Thị Hùng,le.thi.hung.305@duytanplasti.vn,Duy Tan Plastics,CTO,fintech,120,0357581419
+Lý Thanh Tâm,ly.thanh.tam.306@gemadeptlogi.vn,Gemadept Logistics,Operations Manager,retail,120,0351404957
+Trần Văn Giang,tran.van.giang.307@gmail.com,Duy Tan Plastics,CTO,logistics,120,0915235931
+Đỗ Hữu Tâm,do.huu.tam.308@haravan.vn,Haravan,CTO,fintech,500,0355629478
+Võ Văn Sơn,vo.van.son.309@gmail.com,Thaco Industries,Product Manager,software,500,0869097852
+Bùi Xuân Hà,bui.xuan.ha.310@hoaphat.vn,Hoà Phát,Operations Manager,ecommerce,250,0708032411
+Hồ Quang Giang,ho.quang.giang.311@tiki.vn,Tiki,Procurement Manager,retail,500,0709072207
+Nguyễn Hồng Dũng,nguyen.hong.dung.312@duytanplasti.vn,Duy Tan Plastics,CEO,healthcare,25,0961240053
+Lý Ngọc An,ly.ngoc.an.313@gmail.com,TopCV,CEO,logistics,50,0934163968
+Lý Văn Sơn,ly.van.son.314@vinamilk.vn,Vinamilk,Sales Director,retail,500,0916731906
+Đặng Thanh Việt,dang.thanh.viet.315@gmail.com,Thaco Industries,Operations Manager,education,120,0350447297
+Hồ Ngọc Mai,ho.ngoc.mai.316@gmail.com,Hoà Phát,CEO,education,250,0354119712
+Lê Minh Oanh,le.minh.oanh.317@vinamilk.vn,Vinamilk,CEO,software,500,0706250540
+Hồ Ngọc Châu,ho.ngoc.chau.318@gmail.com,The Coffee House,Operations Manager,education,120,0709559277
+Bùi Thanh Giang,bui.thanh.giang.319@thecoffeehou.vn,The Coffee House,Kế toán trưởng,fintech,500,0905297464
+Trần Quang Oanh,tran.quang.oanh.320@hoaphat.vn,Hoà Phát,Kế toán trưởng,retail,50,0709414839
+Ngô Thị Mai,ngo.thi.mai.321@thecoffeehou.vn,The Coffee House,CTO,software,120,0972927700
+Bùi Thị Dũng,bui.thi.dung.322@thecoffeehou.vn,The Coffee House,Kế toán trưởng,healthcare,120,0914488249
+Phạm Thị Lan,pham.thi.lan.323@pharmacity.vn,Pharmacity,Sales Director,fintech,25,0934747907
+Phạm Minh Bình,pham.minh.binh.324@gemadeptlogi.vn,Gemadept Logistics,Kế toán trưởng,logistics,500,0962193648
+Hoàng Hữu Việt,hoang.huu.viet.325@viettiengarm.vn,Viet Tien Garment,Kế toán trưởng,manufacturing,500,0322428839
+Võ Minh An,vo.minh.an.326@kiotviet.vn,KiotViet,Operations Manager,healthcare,10,0705975690
+Phạm Quang Hùng,pham.quang.hung.327@gemadeptlogi.vn,Gemadept Logistics,Marketing Manager,software,1500,0910822326
+Lê Hữu Mai,le.huu.mai.328@duytanplasti.vn,Duy Tan Plastics,Product Manager,retail,250,0933434444
+Phạm Xuân Giang,pham.xuan.giang.329@gmail.com,MoMo,Sales Director,software,250,0932671609
+Phạm Quang Lan,pham.quang.lan.330@kiotviet.vn,KiotViet,Product Manager,fintech,10,0933035124
+Vũ Hồng Châu,vu.hong.chau.331@hoaphat.vn,Hoà Phát,Product Manager,retail,1500,0968730203
+Hồ Hồng Mai,ho.hong.mai.332@duytanplasti.vn,Duy Tan Plastics,Operations Manager,logistics,50,0935101696
+Đỗ Văn Khánh,do.van.khanh.333@topcv.vn,TopCV,Kế toán trưởng,healthcare,25,0354906870
+Hoàng Quang Lan,hoang.quang.lan.334@gmail.com,Shopee Vietnam,Sales Director,healthcare,120,0931980873
+Đặng Minh Khánh,dang.minh.khanh.335@hoaphat.vn,Hoà Phát,Kế toán trưởng,software,1500,0932848917
+Phan Minh Khánh,phan.minh.khanh.336@hoaphat.vn,Hoà Phát,CTO,manufacturing,25,0910934240
+Đặng Đức Lan,dang.duc.lan.337@tiki.vn,Tiki,CEO,software,1500,0324643147
+Trần Văn Tuấn,tran.van.tuan.338@gmail.com,TopCV,CFO,education,50,0705123198
+Hồ Ngọc Khánh,ho.ngoc.khanh.339@vngcorporati.vn,VNG Corporation,Procurement Manager,ecommerce,25,0703127611
+Vũ Quang An,vu.quang.an.340@vngcorporati.vn,VNG Corporation,Head of Finance,software,500,0326714241
+Dương Hữu Nam,duong.huu.nam.341@gemadeptlogi.vn,Gemadept Logistics,Marketing Manager,manufacturing,50,0326896847
+Trần Hữu Châu,tran.huu.chau.342@momo.vn,MoMo,Head of Finance,logistics,10,0354791282
+Phan Minh Bình,phan.minh.binh.343@gmail.com,Haravan,Procurement Manager,retail,10,0706249020
+Dương Minh Tâm,duong.minh.tam.344@basevn.vn,Base.vn,Head of Finance,manufacturing,120,0974200688
+Đặng Ngọc Nam,dang.ngoc.nam.345@topcv.vn,TopCV,Marketing Manager,fintech,250,0937597619
+Lê Xuân Tuấn,le.xuan.tuan.346@gmail.com,Shopee Vietnam,CEO,fintech,25,0919031705
+Đặng Minh Hùng,dang.minh.hung.347@viettiengarm.vn,Viet Tien Garment,Product Manager,software,10,0908634326
+Vũ Xuân Lan,vu.xuan.lan.348@viettiengarm.vn,Viet Tien Garment,Procurement Manager,manufacturing,1500,0976096701
+Trần Xuân Tuấn,tran.xuan.tuan.349@topcv.vn,TopCV,Procurement Manager,healthcare,50,0971431124
+Đỗ Đức Tâm,do.duc.tam.350@topcv.vn,TopCV,Operations Manager,ecommerce,1500,0900683684
+Đặng Ngọc Tuấn,dang.ngoc.tuan.351@gmail.com,Base.vn,Head of Finance,manufacturing,500,0935795445
+Ngô Đức Trang,ngo.duc.trang.352@gmail.com,The Coffee House,CEO,software,1500,0902691467
+Phan Hồng Tuấn,phan.hong.tuan.353@thacoindustr.vn,Thaco Industries,Operations Manager,logistics,120,0978676044
+Nguyễn Thanh Sơn,nguyen.thanh.son.354@hoaphat.vn,Hoà Phát,Kế toán trưởng,logistics,120,0907543925
+Trần Thị Giang,tran.thi.giang.355@gmail.com,The Coffee House,Procurement Manager,manufacturing,120,0933263900
+Võ Xuân Châu,vo.xuan.chau.356@gemadeptlogi.vn,Gemadept Logistics,Operations Manager,healthcare,120,0961286712
+Nguyễn Quang Dũng,nguyen.quang.dung.357@basevn.vn,Base.vn,Product Manager,healthcare,250,0907539388
+Phan Hồng Phúc,phan.hong.phuc.358@kiotviet.vn,KiotViet,Operations Manager,logistics,500,0962495627
+Dương Hữu Khánh,duong.huu.khanh.359@shopeevietna.vn,Shopee Vietnam,Sales Director,fintech,10,0868405462
+Phan Thanh Quân,phan.thanh.quan.360@shopeevietna.vn,Shopee Vietnam,Operations Manager,retail,25,0966097308
+Trần Hồng Sơn,tran.hong.son.361@vngcorporati.vn,VNG Corporation,CEO,healthcare,120,0328910824
+Hồ Hữu Mai,ho.huu.mai.362@thacoindustr.vn,Thaco Industries,CFO,healthcare,120,0914388230
+Nguyễn Minh Châu,nguyen.minh.chau.363@thecoffeehou.vn,The Coffee House,Kế toán trưởng,software,25,0353633283
+Nguyễn Thanh Phúc,nguyen.thanh.phuc.364@haravan.vn,Haravan,CEO,healthcare,120,0903695862
+Nguyễn Hồng Linh,nguyen.hong.linh.365@gmail.com,PNJ,Marketing Manager,healthcare,250,0904783462
+Nguyễn Hữu Hà,nguyen.huu.ha.366@pnj.vn,PNJ,CEO,healthcare,25,0358164236
+Hồ Ngọc Hà,ho.ngoc.ha.367@topcv.vn,TopCV,CTO,ecommerce,10,0971260078
+Phan Hồng Hà,phan.hong.ha.368@gmail.com,Vinmec,CFO,ecommerce,25,0869503859
+Hoàng Thanh Dũng,hoang.thanh.dung.369@thecoffeehou.vn,The Coffee House,Marketing Manager,retail,1500,0938036737
+Bùi Quang Hùng,bui.quang.hung.370@topcv.vn,TopCV,Operations Manager,software,25,0862922968
+Lý Văn Dũng,ly.van.dung.371@gmail.com,Tiki,CTO,ecommerce,50,0913760239
+Võ Hồng Giang,vo.hong.giang.372@fptsoftware.vn,FPT Software,Head of Finance,education,250,0970824556
+Dương Đức Trang,duong.duc.trang.373@vinamilk.vn,Vinamilk,Operations Manager,logistics,25,0700312888
+Lê Hồng Phúc,le.hong.phuc.374@pharmacity.vn,Pharmacity,Marketing Manager,ecommerce,500,0709907494
+Trần Hồng Bình,tran.hong.binh.375@haravan.vn,Haravan,Product Manager,logistics,120,0903255666
+Bùi Thị Bình,bui.thi.binh.376@kiotviet.vn,KiotViet,CEO,logistics,500,0705538857
+Vũ Hữu Tâm,vu.huu.tam.377@pharmacity.vn,Pharmacity,Product Manager,healthcare,50,0917480110
+Nguyễn Văn Bình,nguyen.van.binh.378@fptsoftware.vn,FPT Software,Sales Director,ecommerce,120,0909272920
+Hoàng Văn Trang,hoang.van.trang.379@gmail.com,Thaco Industries,CEO,education,1500,0868514176
+Vũ Xuân Phúc,vu.xuan.phuc.380@momo.vn,MoMo,Marketing Manager,manufacturing,500,0869545696
+Hồ Ngọc Oanh,ho.ngoc.oanh.381@viettiengarm.vn,Viet Tien Garment,Head of Finance,manufacturing,25,0939227643
+Lê Văn Bình,le.van.binh.382@haravan.vn,Haravan,Head of Finance,logistics,1500,0973916159
+Trần Hữu Dũng,tran.huu.dung.383@duytanplasti.vn,Duy Tan Plastics,Sales Director,manufacturing,1500,0975542384
+Vũ Thanh Việt,vu.thanh.viet.384@shopeevietna.vn,Shopee Vietnam,Procurement Manager,fintech,25,0862013035
+Hồ Hữu Tuấn,ho.huu.tuan.385@pharmacity.vn,Pharmacity,Operations Manager,logistics,10,0912223222
+Bùi Đức Châu,bui.duc.chau.386@pharmacity.vn,Pharmacity,Product Manager,logistics,25,0918206007
+Hoàng Xuân Nam,hoang.xuan.nam.387@vngcorporati.vn,VNG Corporation,Kế toán trưởng,logistics,250,0968039148
+Phạm Đức Giang,pham.duc.giang.388@cenland.vn,CenLand,Head of Finance,healthcare,250,0919685934
+Đặng Minh Mai,dang.minh.mai.389@pharmacity.vn,Pharmacity,CFO,education,10,0913615593
+Lý Đức Tuấn,ly.duc.tuan.390@vinmec.vn,Vinmec,Head of Finance,software,120,0975048845
+Dương Ngọc Giang,duong.ngoc.giang.391@gemadeptlogi.vn,Gemadept Logistics,Sales Director,ecommerce,500,0325173640
+Ngô Hồng Châu,ngo.hong.chau.392@gmail.com,PNJ,Product Manager,manufacturing,25,0706261748
+Trần Đức Linh,tran.duc.linh.393@gmail.com,The Coffee House,Product Manager,software,25,0975416769
+Phan Minh Hà,phan.minh.ha.394@gmail.com,Viet Tien Garment,Product Manager,healthcare,120,0964891784
+Vũ Văn Hà,vu.van.ha.395@hoaphat.vn,Hoà Phát,Operations Manager,education,50,0932416060
+Ngô Hữu Oanh,ngo.huu.oanh.396@thacoindustr.vn,Thaco Industries,Head of Finance,fintech,250,0969501686
+Lý Hữu Sơn,ly.huu.son.397@vinmec.vn,Vinmec,CEO,retail,250,0705404957
+Lý Đức Hà,ly.duc.ha.398@gmail.com,Duy Tan Plastics,Kế toán trưởng,education,500,0910955673
+Đặng Xuân Khánh,dang.xuan.khanh.399@gemadeptlogi.vn,Gemadept Logistics,Product Manager,software,500,0976294702
+Dương Văn Khánh,duong.van.khanh.400@shopeevietna.vn,Shopee Vietnam,Marketing Manager,education,120,0867918790
+Trần Văn An,tran.van.an.401@shopeevietna.vn,Shopee Vietnam,Head of Finance,fintech,500,0919301026
+Phan Văn Hùng,phan.van.hung.402@gmail.com,KiotViet,Operations Manager,fintech,120,0904731597
+Võ Hồng Hùng,vo.hong.hung.403@basevn.vn,Base.vn,Procurement Manager,retail,500,0706955768
+Hồ Hồng Quân,ho.hong.quan.404@thecoffeehou.vn,The Coffee House,Kế toán trưởng,education,10,0970799386
+Phạm Văn Nam,pham.van.nam.405@kiotviet.vn,KiotViet,Product Manager,retail,250,0913843554
+Vũ Hồng Việt,vu.hong.viet.406@thecoffeehou.vn,The Coffee House,CEO,education,250,0918528286
+Hoàng Minh Hà,hoang.minh.ha.407@gmail.com,MoMo,Kế toán trưởng,ecommerce,50,0938515274
+Lý Văn Dũng,ly.van.dung.408@gmail.com,CenLand,CEO,retail,1500,0975079011
+Ngô Ngọc Việt,ngo.ngoc.viet.409@shopeevietna.vn,Shopee Vietnam,Marketing Manager,fintech,1500,0962191908
+Hoàng Ngọc Việt,hoang.ngoc.viet.410@gmail.com,Pharmacity,CEO,healthcare,250,0914906036
+Vũ Xuân Lan,vu.xuan.lan.411@gemadeptlogi.vn,Gemadept Logistics,Head of Finance,manufacturing,25,0916109115
+Vũ Xuân Nam,vu.xuan.nam.412@gemadeptlogi.vn,Gemadept Logistics,CTO,education,50,0355123050
+Võ Ngọc Việt,vo.ngoc.viet.413@gmail.com,TopCV,Head of Finance,ecommerce,25,0703271635
+Vũ Hữu Giang,vu.huu.giang.414@gmail.com,Pharmacity,CEO,healthcare,50,0971947616
+Phạm Thanh Mai,pham.thanh.mai.415@vngcorporati.vn,VNG Corporation,CTO,ecommerce,500,0902812369
+Võ Hồng Trang,vo.hong.trang.416@cenland.vn,CenLand,Operations Manager,ecommerce,25,0933527499
+Ngô Ngọc Giang,ngo.ngoc.giang.417@tiki.vn,Tiki,Sales Director,fintech,500,0321158075
+Lý Xuân Bình,ly.xuan.binh.418@thacoindustr.vn,Thaco Industries,Product Manager,manufacturing,10,0862299786
+Võ Đức Hà,vo.duc.ha.419@thecoffeehou.vn,The Coffee House,Kế toán trưởng,fintech,25,0931309934
+Hoàng Thị Tâm,hoang.thi.tam.420@shopeevietna.vn,Shopee Vietnam,Head of Finance,ecommerce,120,0355295170
+Phan Quang An,phan.quang.an.421@kiotviet.vn,KiotViet,Marketing Manager,fintech,10,0354191860
+Phan Hữu Oanh,phan.huu.oanh.422@gmail.com,Tiki,Head of Finance,software,50,0320758740
+Phạm Đức Oanh,pham.duc.oanh.423@gmail.com,Hoà Phát,CEO,logistics,1500,0707117525
+Lý Thị Nam,ly.thi.nam.424@pharmacity.vn,Pharmacity,Product Manager,fintech,25,0902449214
+Võ Văn Phúc,vo.van.phuc.425@pharmacity.vn,Pharmacity,Sales Director,healthcare,500,0321236209
+Ngô Thanh Quân,ngo.thanh.quan.426@thecoffeehou.vn,The Coffee House,CTO,fintech,1500,0961642372
+Dương Thị Sơn,duong.thi.son.427@shopeevietna.vn,Shopee Vietnam,CEO,fintech,10,0703423973
+Nguyễn Thị Khánh,nguyen.thi.khanh.428@haravan.vn,Haravan,Sales Director,fintech,120,0700328477
+Ngô Đức Sơn,ngo.duc.son.429@gmail.com,CenLand,Head of Finance,logistics,250,0862665736
+Võ Minh Giang,vo.minh.giang.430@gemadeptlogi.vn,Gemadept Logistics,CTO,healthcare,10,0864481082
+Phan Hữu Oanh,phan.huu.oanh.431@cenland.vn,CenLand,CFO,manufacturing,10,0868726544
+Nguyễn Thị An,nguyen.thi.an.432@cenland.vn,CenLand,CTO,education,25,0913801808
+Dương Thanh Hùng,duong.thanh.hung.433@topcv.vn,TopCV,CTO,software,50,0329868397
+Hoàng Thanh Khánh,hoang.thanh.khanh.434@kiotviet.vn,KiotViet,Operations Manager,retail,1500,0861191352
+Lý Quang Oanh,ly.quang.oanh.435@thecoffeehou.vn,The Coffee House,Operations Manager,healthcare,500,0327096045
+Phạm Thị Phúc,pham.thi.phuc.436@thacoindustr.vn,Thaco Industries,Operations Manager,fintech,500,0866419380
+Phan Xuân Châu,phan.xuan.chau.437@gmail.com,VNG Corporation,Operations Manager,manufacturing,250,0350132626
+Đỗ Xuân Tâm,do.xuan.tam.438@vinmec.vn,Vinmec,CEO,ecommerce,250,0860111143
+Lý Văn Tâm,ly.van.tam.439@gmail.com,Gemadept Logistics,Procurement Manager,healthcare,10,0860131268
+Phạm Hữu Việt,pham.huu.viet.440@kiotviet.vn,KiotViet,CTO,ecommerce,500,0907978004
+Đặng Xuân Hà,dang.xuan.ha.441@fptsoftware.vn,FPT Software,Procurement Manager,manufacturing,10,0326499086
+Đỗ Đức Tâm,do.duc.tam.442@thacoindustr.vn,Thaco Industries,CTO,logistics,1500,0705115149
+Đặng Minh Dũng,dang.minh.dung.443@gmail.com,CenLand,CTO,retail,10,0919608915
+Võ Quang Oanh,vo.quang.oanh.444@gmail.com,Vinmec,Kế toán trưởng,retail,500,0325595072
+Dương Văn Sơn,duong.van.son.445@pnj.vn,PNJ,CFO,education,25,0353255164
+Vũ Văn Trang,vu.van.trang.446@gmail.com,Duy Tan Plastics,Product Manager,healthcare,120,0977632599
+Hoàng Văn Việt,hoang.van.viet.447@gmail.com,Gemadept Logistics,Kế toán trưởng,education,10,0961809543
+Đỗ Hồng Khánh,do.hong.khanh.448@hoaphat.vn,Hoà Phát,Kế toán trưởng,healthcare,500,0966583463
+Dương Hồng Khánh,duong.hong.khanh.449@pharmacity.vn,Pharmacity,Procurement Manager,software,25,0320849613
+Đặng Minh Dũng,dang.minh.dung.450@thecoffeehou.vn,The Coffee House,Marketing Manager,retail,50,0702860748
+Phan Xuân Bình,phan.xuan.binh.451@gmail.com,Gemadept Logistics,Procurement Manager,ecommerce,500,0352394187
+Hồ Thị Mai,ho.thi.mai.452@haravan.vn,Haravan,CFO,healthcare,25,0324974437
+Hoàng Xuân Dũng,hoang.xuan.dung.453@cenland.vn,CenLand,Operations Manager,ecommerce,500,0322966214
+Ngô Minh Sơn,ngo.minh.son.454@fptsoftware.vn,FPT Software,Procurement Manager,software,250,0978332145
+Hồ Thanh Tâm,ho.thanh.tam.455@basevn.vn,Base.vn,CEO,healthcare,25,0960307466
+Võ Thị Hà,vo.thi.ha.456@thacoindustr.vn,Thaco Industries,CTO,education,250,0862142969
+Đặng Xuân Việt,dang.xuan.viet.457@pharmacity.vn,Pharmacity,CTO,software,10,0327327759
+Phạm Xuân Dũng,pham.xuan.dung.458@gmail.com,Vinamilk,CTO,logistics,500,0969446976
+Ngô Đức Nam,ngo.duc.nam.459@kiotviet.vn,KiotViet,Kế toán trưởng,retail,50,0977764415
+Đặng Quang Nam,dang.quang.nam.460@vinmec.vn,Vinmec,CTO,ecommerce,1500,0907454748
+Lê Đức Tuấn,le.duc.tuan.461@duytanplasti.vn,Duy Tan Plastics,Sales Director,fintech,120,0865524762
+Võ Xuân Bình,vo.xuan.binh.462@vngcorporati.vn,VNG Corporation,Sales Director,fintech,500,0960856134
+Đặng Ngọc Khánh,dang.ngoc.khanh.463@vinamilk.vn,Vinamilk,Sales Director,software,500,0701288363
+Hồ Hồng Nam,ho.hong.nam.464@basevn.vn,Base.vn,Head of Finance,software,10,0932678700
+Hoàng Hồng Châu,hoang.hong.chau.465@momo.vn,MoMo,Sales Director,ecommerce,50,0357365757
+Trần Minh Tuấn,tran.minh.tuan.466@fptsoftware.vn,FPT Software,Sales Director,logistics,500,0863721406
+Dương Minh Bình,duong.minh.binh.467@gemadeptlogi.vn,Gemadept Logistics,Operations Manager,retail,500,0967249214
+Phan Hồng Linh,phan.hong.linh.468@pnj.vn,PNJ,Operations Manager,healthcare,25,0963616033
+Hồ Hữu Châu,ho.huu.chau.469@cenland.vn,CenLand,Procurement Manager,fintech,120,0321236471
+Bùi Quang Tuấn,bui.quang.tuan.470@pnj.vn,PNJ,Procurement Manager,logistics,10,0935656577
+Vũ Văn Sơn,vu.van.son.471@topcv.vn,TopCV,Kế toán trưởng,fintech,25,0355645954
+Đặng Thanh An,dang.thanh.an.472@gmail.com,MoMo,Procurement Manager,manufacturing,50,0963219076
+Trần Thị Việt,tran.thi.viet.473@gmail.com,Vinamilk,CTO,software,500,0907225760
+Hoàng Thị Hà,hoang.thi.ha.474@gmail.com,PNJ,Procurement Manager,healthcare,50,0863293767
+Hồ Hồng Oanh,ho.hong.oanh.475@gmail.com,Tiki,Head of Finance,healthcare,25,0919050282
+Dương Xuân Lan,duong.xuan.lan.476@gmail.com,VNG Corporation,Head of Finance,ecommerce,120,0961038298
+Đỗ Quang Nam,do.quang.nam.477@gmail.com,Vinamilk,Kế toán trưởng,ecommerce,25,0912879063
+Vũ Ngọc Lan,vu.ngoc.lan.478@gmail.com,Pharmacity,Operations Manager,ecommerce,250,0968285726
+Đặng Đức Mai,dang.duc.mai.479@duytanplasti.vn,Duy Tan Plastics,Head of Finance,education,25,0932804531
+Hoàng Quang Lan,hoang.quang.lan.480@thecoffeehou.vn,The Coffee House,Head of Finance,healthcare,50,0358029511
+Lê Ngọc Châu,le.ngoc.chau.481@viettiengarm.vn,Viet Tien Garment,Product Manager,logistics,50,0919168931
+Phạm Minh An,pham.minh.an.482@topcv.vn,TopCV,Kế toán trưởng,logistics,10,0963086228
+Đỗ Văn Khánh,do.van.khanh.483@gmail.com,Tiki,Operations Manager,ecommerce,1500,0909067719
+Hoàng Hồng Tuấn,hoang.hong.tuan.484@hoaphat.vn,Hoà Phát,Kế toán trưởng,healthcare,50,0971309110
+Lê Hữu Mai,le.huu.mai.485@vngcorporati.vn,VNG Corporation,Operations Manager,fintech,250,0933999277
+Dương Thanh Tuấn,duong.thanh.tuan.486@gmail.com,Pharmacity,CTO,ecommerce,500,0356326690
+Bùi Thanh Phúc,bui.thanh.phuc.487@pnj.vn,PNJ,Operations Manager,software,500,0908232205
+Võ Đức Trang,vo.duc.trang.488@vngcorporati.vn,VNG Corporation,Kế toán trưởng,ecommerce,250,0971486091
+Vũ Quang Tâm,vu.quang.tam.489@duytanplasti.vn,Duy Tan Plastics,Product Manager,ecommerce,120,0961690859
+Lê Quang Trang,le.quang.trang.490@gmail.com,Gemadept Logistics,Procurement Manager,ecommerce,1500,0966266213
+Bùi Quang Việt,bui.quang.viet.491@gmail.com,The Coffee House,CTO,ecommerce,500,0975840242
+Phan Hữu Trang,phan.huu.trang.492@cenland.vn,CenLand,Kế toán trưởng,logistics,500,0913582086
+Nguyễn Quang Lan,nguyen.quang.lan.493@momo.vn,MoMo,CTO,software,120,0939930279
+Trần Đức Trang,tran.duc.trang.494@kiotviet.vn,KiotViet,Operations Manager,fintech,10,0706913628
+Ngô Xuân An,ngo.xuan.an.495@pharmacity.vn,Pharmacity,Operations Manager,manufacturing,120,0965234281
+Hoàng Minh Dũng,hoang.minh.dung.496@gmail.com,Thaco Industries,CTO,fintech,500,0964690117
+Bùi Hữu An,bui.huu.an.497@momo.vn,MoMo,Marketing Manager,logistics,250,0960219959
+Đặng Quang Sơn,dang.quang.son.498@kiotviet.vn,KiotViet,Sales Director,education,500,0355234425
+Võ Đức Dũng,vo.duc.dung.499@pharmacity.vn,Pharmacity,CEO,manufacturing,120,0972918101

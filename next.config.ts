@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // pg-boss (pg driver) và postgres-js không nên bị bundle vào server build
+  serverExternalPackages: ['pg-boss', 'postgres'],
+}
 
-export default nextConfig;
+export default nextConfig

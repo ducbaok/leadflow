@@ -1,0 +1,125 @@
+{
+  "$description": "SoT chuẩn dedupe — 15 cặp lead làm acceptance criteria cho F2 (docs/sot/20-dedupe-spec.md giải thích quy tắc). kind=exact: so sánh email_normalized (gom tự động khi import). kind=fuzzy: pg_trgm trên tên+công ty đã normalize. expected: duplicate|suspect = PHẢI bị flag (MVP không auto-merge fuzzy); not_duplicate = KHÔNG được flag.",
+  "pairs": [
+    {
+      "id": 1,
+      "kind": "exact",
+      "expected": "duplicate",
+      "a": { "fullName": "Nguyễn Văn An", "companyName": "FPT Software", "email": "nguyen.van.an@gmail.com" },
+      "b": { "fullName": "Nguyen Van An", "companyName": "FPT Software", "email": "nguyenvanan@gmail.com" },
+      "note": "Gmail bỏ dấu chấm trong local part → cùng một hộp thư"
+    },
+    {
+      "id": 2,
+      "kind": "exact",
+      "expected": "duplicate",
+      "a": { "fullName": "Phạm Lan", "companyName": "Haravan", "email": "lan.pham+crm@gmail.com" },
+      "b": { "fullName": "Pham Lan", "companyName": "Haravan", "email": "lan.pham@gmail.com" },
+      "note": "Gmail strip +suffix"
+    },
+    {
+      "id": 3,
+      "kind": "exact",
+      "expected": "duplicate",
+      "a": { "fullName": "Trần Minh", "companyName": "FPT", "email": "Minh.Tran@FPT.com.vn" },
+      "b": { "fullName": "Tran Minh", "companyName": "FPT", "email": "minh.tran@fpt.com.vn" },
+      "note": "Email case-insensitive với mọi domain"
+    },
+    {
+      "id": 4,
+      "kind": "fuzzy",
+      "expected": "duplicate",
+      "a": { "fullName": "Nguyễn Văn An", "companyName": "FPT Software" },
+      "b": { "fullName": "Nguyen Van An", "companyName": "FPT Software Ltd." },
+      "note": "Dấu tiếng Việt + hậu tố pháp lý — normalize xong trùng hoàn toàn"
+    },
+    {
+      "id": 5,
+      "kind": "fuzzy",
+      "expected": "duplicate",
+      "a": { "fullName": "Trần Thị Bích", "companyName": "VNG Corporation" },
+      "b": { "fullName": "Tran Thi Bich", "companyName": "VNG Corp" },
+      "note": "Corporation/Corp đều bị strip → vng == vng"
+    },
+    {
+      "id": 6,
+      "kind": "fuzzy",
+      "expected": "duplicate",
+      "a": { "fullName": "Lê Hoàng Nam", "companyName": "Tiki" },
+      "b": { "fullName": "Le Hoang Nam", "companyName": "TIKI JSC" },
+      "note": "Case + JSC suffix"
+    },
+    {
+      "id": 7,
+      "kind": "fuzzy",
+      "expected": "suspect",
+      "a": { "fullName": "Phạm Quang Huy", "companyName": "MoMo" },
+      "b": { "fullName": "Pham Q. Huy", "companyName": "MoMo (M_Service)" },
+      "note": "Tên viết tắt chữ lót — giống nhiều nhưng không chắc → flag cho người quyết"
+    },
+    {
+      "id": 8,
+      "kind": "fuzzy",
+      "expected": "not_duplicate",
+      "a": { "fullName": "Nguyễn Văn An", "companyName": "FPT Software" },
+      "b": { "fullName": "Trần Văn Bình", "companyName": "FPT Software" },
+      "note": "Cùng công ty nhưng tên khác hẳn — company match ĐƠN LẺ không đủ để flag"
+    },
+    {
+      "id": 9,
+      "kind": "fuzzy",
+      "expected": "not_duplicate",
+      "a": { "fullName": "Nguyễn Thanh Tùng", "companyName": "Viettel" },
+      "b": { "fullName": "Nguyen Thanh Tung", "companyName": "VNPT" },
+      "note": "Tên VN phổ biến, công ty khác hẳn — name match ĐƠN LẺ không đủ để flag"
+    },
+    {
+      "id": 10,
+      "kind": "fuzzy",
+      "expected": "suspect",
+      "a": { "fullName": "Nguyễn Văn An", "companyName": "FPT Soft", "email": "nguyen.van.an@fptsoft.vn" },
+      "b": { "fullName": "Nguyen Van An", "companyName": "FPT Soft", "email": "nguyenvanan@fptsoft.vn" },
+      "note": "Quy tắc bỏ dấu chấm KHÔNG áp cho domain ngoài gmail → không auto-merge; nhưng tên+công ty trùng → fuzzy vẫn flag cho người quyết. Đây là ranh giới của gmail rule."
+    },
+    {
+      "id": 11,
+      "kind": "fuzzy",
+      "expected": "not_duplicate",
+      "a": { "fullName": "Hoa Nguyễn", "companyName": "Sun Life Vietnam" },
+      "b": { "fullName": "Hoa Nguyen", "companyName": "Sunhouse Group" },
+      "note": "Tên trùng, công ty nghe na ná nhưng similarity thấp — không flag"
+    },
+    {
+      "id": 12,
+      "kind": "fuzzy",
+      "expected": "suspect",
+      "a": { "fullName": "Đặng Minh Châu", "companyName": "FPT" },
+      "b": { "fullName": "Dang Minh Chau", "companyName": "FPT Software" },
+      "note": "Ví dụ kinh điển của brief: 'FPT' vs 'FPT Software' có phải một?"
+    },
+    {
+      "id": 13,
+      "kind": "fuzzy",
+      "expected": "suspect",
+      "a": { "fullName": "Vũ Thị Mai", "companyName": "Shopee Vietnam" },
+      "b": { "fullName": "Mai Vũ", "companyName": "Shopee" },
+      "note": "Đảo thứ tự tên (Tây hoá) — bắt bằng so sánh token đã sort"
+    },
+    {
+      "id": 14,
+      "kind": "fuzzy",
+      "expected": "suspect",
+      "a": { "fullName": "Đỗ Đức Anh", "companyName": "Grab" },
+      "b": { "fullName": "Do Duc Anh", "companyName": "Grab Financial Group" },
+      "note": "Công ty mẹ/con — tên trùng tuyệt đối nên vẫn flag dù company similarity thấp"
+    },
+    {
+      "id": 15,
+      "kind": "fuzzy",
+      "expected": "not_duplicate",
+      "a": { "fullName": "Bùi Xuân Trường", "companyName": "Techcombank" },
+      "b": { "fullName": "Bui X Truong", "companyName": "TCB" },
+      "note": "TRADE-OFF ghi nhận: viết tắt 'TCB' nằm ngoài khả năng trigram — chấp nhận bỏ sót (false negative) thay vì flag bừa. Ghi vào README mục trade-offs."
+    }
+  ]
+}
