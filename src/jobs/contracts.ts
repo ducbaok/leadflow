@@ -6,15 +6,16 @@ import { z } from 'zod'
 // Tài liệu: docs/sot/40-api-contracts.md — đổi ở đây phải đổi ở đó (quy tắc CLAUDE.md)
 // ============================================================
 
+// Lưu ý: pg-boss v12 chỉ cho phép [a-zA-Z0-9_\-./] trong tên queue → dùng '.' không dùng ':'
 export const JOB = {
   /** Luồng A — xử lý một import batch: parse → staging → validate → promote */
-  importProcess: 'import:process',
+  importProcess: 'import.process',
   /** Luồng D — quét cặp nghi trùng bằng pg_trgm (toàn cục hoặc theo batch) */
-  dedupeScan: 'dedupe:scan',
+  dedupeScan: 'dedupe.scan',
   /** Luồng C — chấm điểm rule-based (miễn phí, set-based) */
-  scoreRules: 'score:rules',
+  scoreRules: 'score.rules',
   /** Luồng C — chấm điểm AI cho danh sách lead (đã lọc top-N, có cache theo hash) */
-  scoreAi: 'score:ai',
+  scoreAi: 'score.ai',
 } as const
 
 export type JobName = (typeof JOB)[keyof typeof JOB]

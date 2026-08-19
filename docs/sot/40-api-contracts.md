@@ -7,10 +7,10 @@
 
 | Job | Payload | Ai gửi | Ai xử lý |
 |---|---|---|---|
-| `import:process` | `{ batchId: uuid }` | POST /api/imports/:id/start | Luồng A |
-| `dedupe:scan` | `{ batchId?: uuid }` (thiếu = quét toàn cục) | POST /api/dedupe/scan; cuối import:process | Luồng D |
-| `score:rules` | `{ leadIds?: uuid[] }` (thiếu = toàn bộ active) | PUT config; POST /api/scoring/run | Luồng C |
-| `score:ai` | `{ leadIds: uuid[] }` (đã là top-N, chunk ≤ 25) | POST /api/scoring/run | Luồng C |
+| `import.process` | `{ batchId: uuid }` | POST /api/imports/:id/start | Luồng A |
+| `dedupe.scan` | `{ batchId?: uuid }` (thiếu = quét toàn cục) | POST /api/dedupe/scan; cuối import.process | Luồng D |
+| `score.rules` | `{ leadIds?: uuid[] }` (thiếu = toàn bộ active) | PUT config; POST /api/scoring/run | Luồng C |
+| `score.ai` | `{ leadIds: uuid[] }` (đã là top-N, chunk ≤ 25) | POST /api/scoring/run | Luồng C |
 
 Queue options (mọi queue): `retryLimit: 3, retryBackoff: true, retryDelay: 5`.
 
@@ -54,7 +54,7 @@ Query = như GET /api/leads (bỏ page/pageSize). Res: `text/csv` stream, **mọ
 | Route | Req | Res |
 |---|---|---|
 | `POST /api/imports` | multipart `file` (CSV ≤ 20MB) | `{ batchId, headers: string[], preview: string[][], guessedMapping: Record<string, string \| null> }` — parse + đổ thô vào `import_rows`, batch `pending` |
-| `POST /api/imports/:batchId/start` | `{ mapping: Record<csvHeader, LeadField \| null>, templateName?: string }` | `{ ok: true }` — lưu mapping (+ template nếu có tên), enqueue `import:process` |
+| `POST /api/imports/:batchId/start` | `{ mapping: Record<csvHeader, LeadField \| null>, templateName?: string }` | `{ ok: true }` — lưu mapping (+ template nếu có tên), enqueue `import.process` |
 | `GET /api/imports` | — | `{ batches: [{ id, filename, sourceType, status, totalRows, validRows, errorRows, insertedLeads, updatedLeads, durationMs, createdAt }] }` |
 | `GET /api/imports/:batchId` | — | batch + `errors: [{ rowNumber, message }]` (tối đa 100 dòng đầu) — nguồn cho progress polling |
 | `GET /api/imports/templates` | — | `{ templates: [{ id, name, mapping }] }` |
@@ -67,13 +67,13 @@ Query = như GET /api/leads (bỏ page/pageSize). Res: `text/csv` stream, **mọ
 |---|---|---|
 | `GET /api/dedupe/pairs?status=pending&page=1` | — | `{ pairs: [{ id, nameSimilarity, companySimilarity, createdAt, a: LeadSnapshot, b: LeadSnapshot }], total }` — LeadSnapshot gồm các field hiển thị + số nguồn + status + scores |
 | `POST /api/dedupe/pairs/:id/decision` | `{ decision: "merged", keptLeadId } \| { decision: "not_duplicate" }` | `{ ok: true }` — transaction theo 20-dedupe-spec.md |
-| `POST /api/dedupe/scan` | — | `{ ok: true }` — enqueue `dedupe:scan` |
+| `POST /api/dedupe/scan` | — | `{ ok: true }` — enqueue `dedupe.scan` |
 
 ## Scoring (luồng C sở hữu)
 
 | Route | Req | Res |
 |---|---|---|
 | `GET /api/scoring/config` | — | `{ icpDescription, rules, aiTopN }` |
-| `PUT /api/scoring/config` | `{ icpDescription?, rules?, aiTopN? }` (zod validate theo 30-scoring-spec) | `{ ok: true }` + enqueue `score:rules` nếu rules đổi |
+| `PUT /api/scoring/config` | `{ icpDescription?, rules?, aiTopN? }` (zod validate theo 30-scoring-spec) | `{ ok: true }` + enqueue `score.rules` nếu rules đổi |
 | `POST /api/scoring/run` | `{ "kind": "rule" \| "ai" }` | `{ ok: true, enqueued: number }` — kind=ai: chọn top-N rồi chunk 25/job |
 | `GET /api/scoring/status` | — | `{ ruleScored, aiScored, aiPending, aiFailed }` |
