@@ -15,6 +15,8 @@ const SCORE_TOOL: Anthropic.Tool = {
   description:
     'Nộp điểm mức độ phù hợp (ICP fit) của lead: score nguyên 0-100 và reason ngắn gọn bằng tiếng Việt (≤ 240 ký tự).',
   strict: true,
+  // Lưu ý: strict tool use KHÔNG hỗ trợ minimum/maximum (integer) hay maxLength (string)
+  // — API trả 400. Ràng buộc bound đặt trong description; parseAiToolResponse clamp phòng thủ.
   input_schema: {
     type: 'object',
     additionalProperties: false,
@@ -22,13 +24,10 @@ const SCORE_TOOL: Anthropic.Tool = {
     properties: {
       score: {
         type: 'integer',
-        minimum: 0,
-        maximum: 100,
-        description: 'Điểm phù hợp ICP, 0 = không phù hợp, 100 = phù hợp hoàn hảo.',
+        description: 'Điểm phù hợp ICP, số nguyên từ 0 đến 100 (0 = không phù hợp, 100 = phù hợp hoàn hảo).',
       },
       reason: {
         type: 'string',
-        maxLength: 240,
         description: 'Lý do ngắn gọn bằng TIẾNG VIỆT, tối đa 240 ký tự, nêu tín hiệu chính (chức danh, quy mô, ngành).',
       },
     },
