@@ -1,9 +1,13 @@
 import { NextResponse } from 'next/server'
 import { SESSION_COOKIE, SESSION_MAX_AGE, createSessionToken } from '@/lib/session'
 
-export async function POST(request: Request) {
+// Location TƯƠNG ĐỐI, cố ý. `new URL('/leads', request.url)` dựng URL tuyệt đối từ
+// HOSTNAME/PORT mà server đang bind — trong container standalone thành `http://0.0.0.0:3000/leads`,
+// tức là bản deploy KHÔNG đăng nhập được. Relative Location hợp lệ theo RFC 7231 và
+// đúng sau mọi reverse proxy (Railway) mà không cần đọc x-forwarded-*.
+export async function POST() {
   const token = await createSessionToken()
-  const res = NextResponse.redirect(new URL('/leads', request.url), 303)
+  const res = new NextResponse(null, { status: 303, headers: { Location: '/leads' } })
   res.cookies.set(SESSION_COOKIE, token, {
     httpOnly: true,
     sameSite: 'lax',

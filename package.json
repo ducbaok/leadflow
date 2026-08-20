@@ -15,7 +15,8 @@
     "seed": "tsx --env-file=.env.local scripts/seed.ts",
     "samples": "tsx scripts/generate-samples.ts",
     "db:migrate:kit": "drizzle-kit migrate",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "demo:gif": "node scripts/record-demo.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
@@ -44,6 +45,8 @@
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
+    "gifenc": "^1.0.3",
+    "pngjs": "^7.0.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5",

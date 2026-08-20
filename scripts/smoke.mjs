@@ -32,11 +32,18 @@ try {
   check('proxy chặn khi chưa login', res.status === 401, `status=${res.status}`)
 }
 
-// 3. Login demo 1-click
+// 3. Login demo 1-click.
+// Location phải TƯƠNG ĐỐI: bản standalone từng trả `http://0.0.0.0:3000/leads` (host mà server bind)
+// làm trình duyệt không đi tiếp được — lỗi chỉ lộ sau reverse proxy, nên kiểm ở đây.
 {
   const res = await api('/api/auth/demo', { method: 'POST' })
   cookie = (res.headers.get('set-cookie') ?? '').split(';')[0]
-  check('login demo', res.status === 303 && cookie.includes('leadflow_session'), `status=${res.status}`)
+  const location = res.headers.get('location') ?? ''
+  check(
+    'login demo',
+    res.status === 303 && cookie.includes('leadflow_session') && location.startsWith('/'),
+    `status=${res.status} location=${location}`,
+  )
 }
 
 // 4. Dashboard có dữ liệu (demo trống = portfolio chết)
