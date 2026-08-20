@@ -22,3 +22,6 @@ Nút "Enter demo" tạo session cookie ký (jose HS256, 7 ngày), proxy.ts chặ
 
 ## ADR-007 — AI model qua env, mặc định Haiku 4.5 (2026-08-19)
 `AI_SCORING_MODEL=claude-haiku-4-5` ($1/$5 per MTok — top-200 lead ≈ vài cent/lần chấm). Đổi model = đổi env, không đổi code. Structured output bằng strict tool use; cache theo input_hash; retry SDK + pg-boss.
+
+## ADR-008 — Thêm `aiStatus` (additive) vào GET /api/leads (2026-08-20)
+Batch 2 luồng E: `GET /api/leads` thêm field `aiStatus: 'pending'|'completed'|'failed'|null` (join `lead_scores.status` của bản `kind='ai'`; null = chưa từng chấm). Lý do: shape cũ chỉ có `aiScore` nên "đang chấm" (pending, score=NULL) và "chưa chấm" (không có bản ai) trùng hình → không hiện được badge "Scoring…" theo 30-scoring-spec §3. Field CHỈ thêm (không đổi `ruleScore/aiScore/aiReason`), mirror `scores[].status` mà `GET /api/leads/:id` đã trả. Đồng bộ cùng commit: `40-api-contracts.md`, `src/app/api/leads/route.ts`, `src/components/leads/types.ts`, bảng leads.

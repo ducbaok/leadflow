@@ -34,12 +34,13 @@ Mặc định chỉ trả lead active (`archived_at IS NULL`).
     "status": "new", "createdAt": "ISO",
     "ruleScore": 55,          // null nếu chưa chấm
     "aiScore": 78,            // null nếu chưa chấm
-    "aiReason": "..."         // null nếu chưa chấm
+    "aiReason": "...",        // null nếu chưa chấm
+    "aiStatus": "pending"     // 'pending' | 'completed' | 'failed' | null (null = chưa từng chấm AI)
   }],
   "total": 5304, "page": 1, "pageSize": 25
 }
 ```
-(Score fields có mặt trong shape NGAY TỪ ĐẦU — Batch 1 luồng B trả null, Batch 2 luồng E join `lead_scores`. Shape không đổi.)
+(Score fields `ruleScore/aiScore/aiReason` có mặt trong shape NGAY TỪ ĐẦU — Batch 1 luồng B trả null, Batch 2 luồng E join `lead_scores`; ba field này không đổi. `aiStatus` được THÊM (additive) ở Batch 2 để phân biệt "đang chấm" với "chưa chấm" cho badge per-row — mirror `scores[].status` mà `GET /api/leads/:id` đã trả. Xem ADR-008.)
 
 ### `GET /api/leads/:id`
 `{ lead: LeadRow, sources: [{ id, sourceType, rowNumber, rawData, createdAt, batchFilename }], scores: [{ kind, score, reason, model, scoredAt, status }] }`

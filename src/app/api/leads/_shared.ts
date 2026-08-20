@@ -1,6 +1,7 @@
-import { and, asc, desc, eq, ilike, isNull, or, type SQL } from 'drizzle-orm'
+import { and, asc, desc, eq, ilike, isNull, or, sql, type SQL } from 'drizzle-orm'
+import { alias } from 'drizzle-orm/pg-core'
 import { z } from 'zod'
-import { leads } from '@/db/schema'
+import { leadScores, leads } from '@/db/schema'
 
 // Query parsing + điều kiện lọc dùng chung cho GET /api/leads và GET /api/leads/export.
 // Đặt cùng thư mục route (luồng B sở hữu) để export bám ĐÚNG filter của list.
@@ -22,6 +23,12 @@ export const leadsQuerySchema = z.object({
 })
 
 export type LeadsQuery = z.infer<typeof leadsQuerySchema>
+
+// Alias `lead_scores` hai lần: một cho bản rule, một cho bản ai — để join cả hai vào
+// GET /api/leads và /export (mỗi lead ≤ 1 bản mỗi kind, unique (lead_id, kind)).
+// Định nghĩa ở đây để route + export + buildLeadsOrderBy dùng CHUNG một alias.
+export const ruleScores = alias(leadScores, 'rule_scores')
+export const aiScores = alias(leadScores, 'ai_scores')
 
 export function parseLeadsQuery(searchParams: URLSearchParams): LeadsQuery {
   // Bỏ các key rỗng để .optional()/.default() hoạt động đúng (?status= → undefined)
@@ -63,14 +70,21 @@ const SORT_COLUMN = {
   companyName: leads.companyNameNormalized,
   companySize: leads.companySize,
   status: leads.status,
-  // ruleScore/aiScore: chưa join lead_scores ở Batch 1 → sort theo createdAt (xem chú thích trên).
-  ruleScore: leads.createdAt,
-  aiScore: leads.createdAt,
 } as const
+type ScalarSort = keyof typeof SORT_COLUMN
 
-/** ORDER BY. Thêm id làm tie-break để phân trang ổn định (deterministic). */
+/**
+ * ORDER BY. Thêm id làm tie-break để phân trang ổn định (deterministic).
+ * ruleScore/aiScore: sort theo cột đã join (lead_scores.score) với NULLS LAST — lead
+ * chưa chấm (score NULL) luôn xuống cuối dù asc hay desc, để lead đã chấm nổi lên đầu.
+ */
 export function buildLeadsOrderBy(q: LeadsQuery): SQL[] {
-  const col = SORT_COLUMN[q.sort]
+  if (q.sort === 'ruleScore' || q.sort === 'aiScore') {
+    const col = q.sort === 'ruleScore' ? ruleScores.score : aiScores.score
+    const ordered = q.order === 'asc' ? sql`${col} asc nulls last` : sql`${col} desc nulls last`
+    return [ordered, asc(leads.id)]
+  }
+  const col = SORT_COLUMN[q.sort as ScalarSort]
   const dir = q.order === 'asc' ? asc : desc
   return [dir(col), asc(leads.id)]
 }
