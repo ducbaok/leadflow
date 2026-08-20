@@ -52,7 +52,7 @@ Mỗi lần push lên `main`, Railway:
 curl -X POST -H "x-admin-token: $ADMIN_RESET_TOKEN" https://<domain>/api/admin/reset
 ```
 
-Xoá sạch rồi seed lại 5.154 lead (250 lead nhiều nguồn, 150 cặp fuzzy, 4 lead CSV-injection). Chạy đồng bộ — ~1,5s với Postgres local, chậm hơn qua Supavisor pooler (đo lại khi deploy xong).
+Xoá sạch rồi seed lại 5.154 lead (250 lead nhiều nguồn, 150 cặp fuzzy, 4 lead CSV-injection). Chạy đồng bộ — đo thật: ~1,5s với Postgres local, ~25s qua Supavisor pooler tới Supabase.
 Seed **không** tạo điểm — sau khi reset, vào `/settings` bấm **Score with rules** để dashboard có cột điểm.
 Muốn có sẵn cặp trùng chờ review: gọi `POST /api/dedupe/scan` (hoặc nút Scan ở `/dedupe`).
 

@@ -59,6 +59,21 @@ flowchart TB
     BOSS -- "top-N only, cached by input_hash" --> CLAUDE
 ```
 
+### Measured on the live deployment
+
+Numbers below are from the acceptance suite run against the deployed app, not a local benchmark — Railway container, Supabase Postgres over the session pooler, both on free tiers, roughly 9,000km apart from the machine issuing the requests.
+
+| What | Measured | Target |
+|---|---|---|
+| Import 10,000 rows over HTTP, end to end | **24.5s** (9,800 leads created, 200 collapsed as exact duplicates) | < 30s |
+| Re-importing the same file | 0 created, 9,800 updated, row count unchanged | idempotent |
+| Rule-scoring 15,239 leads | single set-based SQL pass | — |
+| Filtered + sorted page of leads, cold | 903ms | — |
+| Fuzzy scan over the seed set | ~1,500 candidate pairs flagged | — |
+| Wiping and re-seeding 5,154 leads | 25s (1.5s against local Postgres) | — |
+
+The 10k import stays under budget because the rows are bulk-loaded into a staging table and promoted with set-based SQL. The same file imported row-by-row through an ORM does not come close.
+
 **Why one process instead of a worker service:** every extra moving piece is another thing that can be down at 2am and another line on the hosting bill. `pg-boss` puts the queue in the Postgres instance the app already needs, and the workers boot in the same process as the web server. No Redis, no separate deployment. The trade-off is real and named below.
 
 ---

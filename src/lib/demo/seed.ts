@@ -135,6 +135,24 @@ function makeLead(i: number): SeedLead {
   }
 }
 
+// Cấu hình scoring mặc định của bộ demo. Phái sinh từ 30-scoring-spec §1 (giống DEFAULT_RULES
+// trong src/lib/scoring/constants.ts — hai nơi, một nguồn sự thật là file SoT).
+const DEMO_ICP =
+  'Chúng tôi bán phần mềm quản lý tài chính cho doanh nghiệp vừa (20–500 nhân sự) ngành sản xuất, bán lẻ, thương mại điện tử tại Việt Nam. Người quyết định mua thường là CFO, Kế toán trưởng hoặc Head of Finance. Công ty đang tăng trưởng, vừa gọi vốn hoặc mở rộng chi nhánh là tín hiệu tốt.'
+
+const DEMO_RULES = {
+  version: 1,
+  rules: [
+    { field: 'title', op: 'contains_any', values: ['cfo', 'chief financial', 'finance director', 'ke toan truong', 'head of finance'], points: 30 },
+    { field: 'companySize', op: 'between', min: 20, max: 500, points: 25 },
+    { field: 'industry', op: 'in', values: ['manufacturing', 'retail', 'ecommerce'], points: 15 },
+    { field: 'phoneValid', op: 'equals', value: true, points: 10 },
+    { field: 'email', op: 'is_company_domain', points: 10 },
+  ],
+}
+
+const DEMO_AI_TOP_N = 200
+
 export type SeedResult = { leads: number; multiSource: number; fuzzy: number; injection: number }
 
 /**
@@ -252,23 +270,14 @@ export async function seedDemoData(db: Db = getDb(), log: (msg: string) => void 
   log('→ Scoring config mặc định...')
   await db
     .insert(scoringConfig)
-    .values({
-      id: 1,
-      icpDescription:
-        'Chúng tôi bán phần mềm quản lý tài chính cho doanh nghiệp vừa (20–500 nhân sự) ngành sản xuất, bán lẻ, thương mại điện tử tại Việt Nam. Người quyết định mua thường là CFO, Kế toán trưởng hoặc Head of Finance. Công ty đang tăng trưởng, vừa gọi vốn hoặc mở rộng chi nhánh là tín hiệu tốt.',
-      rules: {
-        version: 1,
-        rules: [
-          { field: 'title', op: 'contains_any', values: ['cfo', 'chief financial', 'finance director', 'ke toan truong', 'head of finance'], points: 30 },
-          { field: 'companySize', op: 'between', min: 20, max: 500, points: 25 },
-          { field: 'industry', op: 'in', values: ['manufacturing', 'retail', 'ecommerce'], points: 15 },
-          { field: 'phoneValid', op: 'equals', value: true, points: 10 },
-          { field: 'email', op: 'is_company_domain', points: 10 },
-        ],
-      },
-      aiTopN: 200,
+    .values({ id: 1, icpDescription: DEMO_ICP, rules: DEMO_RULES, aiTopN: DEMO_AI_TOP_N })
+    // Ghi đè TOÀN BỘ, không chỉ updatedAt: scoring_config nằm ngoài TRUNCATE ở trên (nó không có
+    // FK tới leads), nên nếu chỉ chạm updatedAt thì rule/ICP/aiTopN mà khách tham quan sửa trên
+    // /settings sẽ sống mãi — reset demo mất tác dụng đúng ở chỗ nó cần có tác dụng nhất.
+    .onConflictDoUpdate({
+      target: scoringConfig.id,
+      set: { icpDescription: DEMO_ICP, rules: DEMO_RULES, aiTopN: DEMO_AI_TOP_N, updatedAt: new Date() },
     })
-    .onConflictDoUpdate({ target: scoringConfig.id, set: { updatedAt: new Date() } })
 
   const multiSourceCount = all.filter((l) => l.sources.length > 1).length
   log(`✓ Seed xong: ${all.length} leads (${multiSourceCount} lead nhiều nguồn, ${fuzzyClones.length} fuzzy dupes, ${injection.length} injection demo)`)
