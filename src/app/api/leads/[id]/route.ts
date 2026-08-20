@@ -72,9 +72,12 @@ export async function GET(_request: NextRequest, ctx: { params: Promise<{ id: st
     lead: {
       ...lead,
       createdAt: lead.createdAt.toISOString(),
+      // Detail phơi điểm/lý do/trạng thái AI qua `scores[]` bên dưới; các field score trên
+      // `lead` giữ null cho khớp LeadRow (aiStatus additive theo ADR-008).
       ruleScore: null,
       aiScore: null,
       aiReason: null,
+      aiStatus: null,
     },
     sources: sources.map((s) => ({ ...s, createdAt: s.createdAt.toISOString() })),
     scores: scores.map((s) => ({ ...s, scoredAt: s.scoredAt?.toISOString() ?? null })),

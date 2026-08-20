@@ -32,6 +32,72 @@ function resolveUpdater<T>(updater: Updater<T>, prev: T): T {
   return typeof updater === 'function' ? (updater as (p: T) => T)(prev) : updater
 }
 
+// Rule vs AI lệch từ ngưỡng này trở lên → tô nổi bật (điểm "wow" của demo, AC-13).
+const SCORE_DELTA_THRESHOLD = 20
+
+function RuleScoreCell({ value }: { value: number | null }) {
+  if (value == null) return <span className="text-zinc-600">—</span>
+  return <span className="tabular-nums font-medium text-zinc-200">{value}</span>
+}
+
+// Cột AI: số điểm + lý do (tooltip), badge "Scoring…" khi pending, và tô lệch so với Rule.
+function AiScoreCell({ row }: { row: LeadRow }) {
+  const { aiScore, aiReason, aiStatus, ruleScore } = row
+
+  if (aiStatus === 'pending') {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded-md bg-sky-500/15 px-1.5 py-0.5 text-[11px] font-medium text-sky-300 ring-1 ring-sky-500/30"
+        title="AI scoring in progress"
+      >
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-400" />
+        Scoring…
+      </span>
+    )
+  }
+  if (aiStatus === 'failed') {
+    return (
+      <span className="text-[11px] text-rose-400" title="AI scoring failed for this lead">
+        failed
+      </span>
+    )
+  }
+  if (aiScore == null) return <span className="text-zinc-600">—</span>
+
+  const delta = ruleScore == null ? null : aiScore - ruleScore
+  const divergent = delta != null && Math.abs(delta) >= SCORE_DELTA_THRESHOLD
+  const up = (delta ?? 0) > 0
+  // delta>0: AI lạc quan hơn rule (emerald). delta<0: AI dè dặt hơn (amber).
+  const tone = up
+    ? 'text-emerald-300 ring-emerald-500/40 bg-emerald-500/10'
+    : 'text-amber-300 ring-amber-500/40 bg-amber-500/10'
+
+  return (
+    <span className="inline-flex items-center gap-1.5" title={aiReason ?? undefined}>
+      <span
+        className={
+          divergent
+            ? `rounded-md px-1.5 py-0.5 tabular-nums font-semibold ring-1 ${tone}`
+            : 'tabular-nums font-medium text-zinc-200'
+        }
+      >
+        {aiScore}
+      </span>
+      {divergent && (
+        <span className={`text-[11px] tabular-nums ${up ? 'text-emerald-400' : 'text-amber-400'}`}>
+          {up ? '▲' : '▼'}
+          {Math.abs(delta!)}
+        </span>
+      )}
+      {aiReason && (
+        <span className="text-zinc-500" aria-hidden>
+          ⓘ
+        </span>
+      )}
+    </span>
+  )
+}
+
 const columns = helper.columns([
   helper.accessor('fullName', {
     header: 'Name',
@@ -91,15 +157,15 @@ const columns = helper.columns([
       )
     },
   }),
-  // Score: luồng E điền ở Batch 2 (join lead_scores). Batch 1 hiển thị placeholder, chưa sort.
-  helper.display({
-    id: 'score',
-    header: 'Score',
-    cell: () => (
-      <span className="text-zinc-600" title="Scoring lands in Batch 2">
-        —
-      </span>
-    ),
+  // Hai hệ điểm ĐỘC LẬP (30-scoring-spec): Rule (tức thời) và AI (nền, có lý do).
+  // Chỗ hai điểm lệch nhau được tô rõ ở AiScoreCell — không che giấu (AC-13).
+  helper.accessor('ruleScore', {
+    header: 'Rule',
+    cell: ({ getValue }) => <RuleScoreCell value={getValue()} />,
+  }),
+  helper.accessor('aiScore', {
+    header: 'AI',
+    cell: ({ row }) => <AiScoreCell row={row.original} />,
   }),
   helper.accessor('status', {
     header: 'Status',

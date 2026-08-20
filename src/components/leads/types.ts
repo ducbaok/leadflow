@@ -17,6 +17,9 @@ export type LeadRow = {
   ruleScore: number | null
   aiScore: number | null
   aiReason: string | null
+  // Trạng thái bản chấm AI (additive, ADR-008): 'pending' = đang chấm (badge "Scoring…"),
+  // null = chưa từng chấm AI. Phân biệt hai ca này với 'completed'/'failed'.
+  aiStatus: 'pending' | 'completed' | 'failed' | null
 }
 
 export type LeadsResponse = {
