@@ -66,7 +66,7 @@ export const STATUS_META: Record<LeadStatus, { label: string; badge: string }> =
   STATUS_FLOW.map((s) => [s.value, { label: s.label, badge: s.badge }]),
 ) as Record<LeadStatus, { label: string; badge: string }>
 
-// Ngành dùng cho filter dropdown — tập giá trị domain ổn định (khớp scripts/seed.ts).
+// Ngành dùng cho filter dropdown — tập giá trị domain ổn định (khớp src/lib/demo/seed.ts).
 export const INDUSTRIES: { value: string; label: string }[] = [
   { value: 'software', label: 'Software' },
   { value: 'fintech', label: 'Fintech' },

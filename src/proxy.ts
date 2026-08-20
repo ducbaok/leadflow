@@ -9,7 +9,13 @@ export async function proxy(request: NextRequest) {
   const token = request.cookies.get(SESSION_COOKIE)?.value
   const authed = token ? await verifySessionToken(token) : false
 
-  const isPublic = pathname === '/login' || pathname.startsWith('/api/auth')
+  // Ops miễn session (40-api-contracts §Ops): healthcheck của Railway gọi không kèm cookie,
+  // còn /api/admin/* tự bảo vệ bằng ADMIN_RESET_TOKEN để gọi được bằng curl từ máy khác.
+  const isPublic =
+    pathname === '/login' ||
+    pathname.startsWith('/api/auth') ||
+    pathname === '/api/health' ||
+    pathname.startsWith('/api/admin/')
 
   if (isPublic) {
     if (authed && pathname === '/login') {

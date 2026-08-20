@@ -76,5 +76,26 @@ Query = như GET /api/leads (bỏ page/pageSize). Res: `text/csv` stream, **mọ
 |---|---|---|
 | `GET /api/scoring/config` | — | `{ icpDescription, rules, aiTopN }` |
 | `PUT /api/scoring/config` | `{ icpDescription?, rules?, aiTopN? }` (zod validate theo 30-scoring-spec) | `{ ok: true }` + enqueue `score.rules` nếu rules đổi |
-| `POST /api/scoring/run` | `{ "kind": "rule" \| "ai" }` | `{ ok: true, enqueued: number }` — kind=ai: chọn top-N rồi chunk 25/job |
+| `POST /api/scoring/run` | `{ "kind": "rule" \| "ai" }` | `{ ok: true, enqueued: number, capped?: true }` — kind=ai: chọn top-N rồi chunk 25/job. **429** `{ error }` nếu còn trong cooldown (xem Rào chi phí AI bên dưới) |
 | `GET /api/scoring/status` | — | `{ ruleScored, aiScored, aiPending, aiFailed }` |
+
+### Rào chi phí AI (thêm ở Batch 3 — ADR-010)
+
+`POST /api/scoring/run` với `kind: "ai"` chịu 2 rào cấu hình bằng env, **mặc định TẮT** (trống → hành vi y hệt trước Batch 3):
+
+| Env | Ý nghĩa | Trống = |
+|---|---|---|
+| `AI_MAX_LEADS_PER_RUN` | N thực tế = `min(scoring_config.ai_top_n, giá trị này)`. Bị cắt → response có `capped: true` | không clamp |
+| `AI_RUN_COOLDOWN_SECONDS` | Khoảng cách tối thiểu giữa 2 lần chạy AI. Vi phạm → **429** `{ error }`, không enqueue, không ghi audit `run_requested` | 0s (không cooldown) |
+
+Cooldown đọc lần chạy trước từ `audit_log` (action `scoring.run_requested`, `payload.kind = 'ai'`) — không thêm bảng, không thêm cột.
+Lý do tồn tại: demo là link public, mỗi lần chấm AI là tiền thật gọi API. Chỉ môi trường demo set 2 env này; local/CI để trống.
+
+## Ops (luồng G sở hữu — Batch 3)
+
+| Route | Req | Res |
+|---|---|---|
+| `GET /api/health` | — (**miễn session** — Railway healthcheck gọi; ngoại lệ duy nhất ngoài `/api/auth/*`) | `{ ok: boolean, db: "up" \| "down", boss: "up" \| "down" }`. 200 khi `db = "up"`, ngược lại **503** |
+| `POST /api/admin/reset` | header `x-admin-token` khớp env `ADMIN_RESET_TOKEN` (**miễn session** — token thay cookie, để gọi bằng curl) | `{ ok: true, leads: number }` — TRUNCATE + seed lại demo (`src/lib/demo/seed.ts`, dùng chung với `npm run seed`). **401** sai/thiếu token; **503** khi `ADMIN_RESET_TOKEN` chưa đặt (route coi như không bật) |
+
+`/api/admin/reset` là hành động phá huỷ và chạy đồng bộ (~5.1k lead) — cố ý không có UI, chỉ gọi bằng `curl`.

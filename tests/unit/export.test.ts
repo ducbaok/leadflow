@@ -68,7 +68,7 @@ describe('formatCsvRow', () => {
   })
 })
 
-// 4 lead tên bắt đầu bằng = + - @ mà seed đã cài sẵn (scripts/seed.ts).
+// 4 lead tên bắt đầu bằng = + - @ mà seed đã cài sẵn (src/lib/demo/seed.ts).
 const SEEDED_INJECTION_NAMES = [
   '=HYPERLINK("https://evil.example","Nguyen Van A")',
   '+84 Nguyen Injected',

@@ -11,12 +11,15 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
     "seed": "tsx --env-file=.env.local scripts/seed.ts",
-    "samples": "tsx scripts/generate-samples.ts"
+    "samples": "tsx scripts/generate-samples.ts",
+    "db:migrate:kit": "drizzle-kit migrate",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
+    "@faker-js/faker": "^10.6.0",
     "@tanstack/react-query": "^5.101.4",
     "@tanstack/react-table": "^9.1.2",
     "dotenv": "^17.4.2",
@@ -32,7 +35,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@faker-js/faker": "^10.6.0",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

@@ -35,7 +35,7 @@
 - **Đổi status KHÔNG ép state-machine phía server** — cho phép mọi status hợp lệ trong enum (SoT `PATCH` chỉ định nghĩa `{status}`, không có máy trạng thái cho lead như bên dedupe). Dropdown xếp theo phễu New→Contacted→Qualified→Won/Lost cho đúng UX. Nếu muốn chặn nhảy cóc → là thay đổi hành vi, báo trước.
 - **Sort theo `ruleScore/aiScore`**: nhận param hợp lệ (giữ enum contract) nhưng **fallback `createdAt`** vì chưa join `lead_scores` — cột "Score" hiển thị placeholder, chưa cho sort ở Batch 1. Luồng E sẽ wire sort thật.
 - **Sort tên/công ty** dùng cột `*_normalized` (đã fold dấu) cho thứ tự alphabet tiếng Việt đẹp hơn.
-- `industry` filter: hardcode 10 giá trị domain trong `src/components/leads/types.ts` (khớp `scripts/seed.ts`) — không tạo thêm API distinct ngoài SoT.
+- `industry` filter: hardcode 10 giá trị domain trong `src/components/leads/types.ts` (khớp `src/lib/demo/seed.ts`) — không tạo thêm API distinct ngoài SoT.
 
 ## 4. Lưu ý vận hành / môi trường
 

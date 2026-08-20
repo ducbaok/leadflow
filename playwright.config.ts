@@ -22,7 +22,8 @@ export default defineConfig({
   timeout: 120_000,
   expect: { timeout: 15_000 },
   retries: process.env.CI ? 1 : 0,
-  reporter: process.env.CI ? [['github'], ['list']] : [['list']],
+  // CI thêm html reporter: workflow upload playwright-report/ làm artifact khi test đỏ
+  reporter: process.env.CI ? [['github'], ['list'], ['html', { open: 'never' }]] : [['list']],
   use: {
     baseURL: BASE_URL,
     trace: 'on-first-retry',

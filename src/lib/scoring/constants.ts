@@ -31,7 +31,7 @@ export function resolveAiModel(): string {
 
 /**
  * Rule mặc định — dùng khi scoring_config chưa được seed (GET config trả về đây).
- * Bản seed thật nằm ở scripts/seed.ts; cả hai đều phái sinh từ 30-scoring-spec §1.
+ * Bản seed thật nằm ở src/lib/demo/seed.ts; cả hai đều phái sinh từ 30-scoring-spec §1.
  */
 export const DEFAULT_RULES: RulesConfig = {
   version: 1,
@@ -42,4 +42,41 @@ export const DEFAULT_RULES: RulesConfig = {
     { field: 'phoneValid', op: 'equals', value: true, points: 10 },
     { field: 'email', op: 'is_company_domain', points: 10 },
   ],
+}
+
+// ---------------------------------------------------------------------------
+// Rào chi phí AI trên demo public (ADR-010, 40-api-contracts §Rào chi phí AI).
+// CẢ HAI mặc định TẮT khi env trống → local/CI giữ nguyên hành vi Batch 1.
+// ---------------------------------------------------------------------------
+
+/** Đọc env số nguyên dương; trống/rác/≤0 → null (coi như không đặt rào). */
+function positiveIntEnv(raw: string | undefined): number | null {
+  const n = Number(raw?.trim())
+  return Number.isFinite(n) && Number.isInteger(n) && n > 0 ? n : null
+}
+
+/** Trần số lead mỗi lần chấm AI. null = không clamp. */
+export function resolveAiMaxLeadsPerRun(): number | null {
+  return positiveIntEnv(process.env.AI_MAX_LEADS_PER_RUN)
+}
+
+/** Khoảng cách tối thiểu giữa 2 lần chạy AI, tính bằng giây. 0 = không cooldown. */
+export function resolveAiCooldownSeconds(): number {
+  return positiveIntEnv(process.env.AI_RUN_COOLDOWN_SECONDS) ?? 0
+}
+
+/** Áp trần lên top-N. Hàm thuần để test được không cần env/DB. */
+export function applyAiCap(topN: number, max: number | null): { effective: number; capped: boolean } {
+  if (max === null || topN <= max) return { effective: topN, capped: false }
+  return { effective: max, capped: true }
+}
+
+/**
+ * Số giây còn phải chờ trước khi được chạy AI lần nữa. 0 = cho chạy.
+ * `lastRunAt` null (chưa từng chạy) hoặc cooldown = 0 → luôn 0.
+ */
+export function cooldownRemainingSeconds(lastRunAt: Date | null, cooldownSeconds: number, now: Date): number {
+  if (!lastRunAt || cooldownSeconds <= 0) return 0
+  const elapsed = (now.getTime() - lastRunAt.getTime()) / 1000
+  return elapsed >= cooldownSeconds ? 0 : Math.ceil(cooldownSeconds - elapsed)
 }

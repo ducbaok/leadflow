@@ -12,8 +12,8 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
@@ -44,15 +44,17 @@ jobs:
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/leadflow_test
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
       - run: npm ci
-      # .env.local để cả drizzle-kit (migrate) và `npm run seed` (--env-file=.env.local) đều thấy DB.
+      # .env.local để cả `npm run db:migrate` (--env-file-if-exists) và `npm run seed` (--env-file) thấy DB.
       - name: Write .env.local
         run: printf 'DATABASE_URL=%s\nSESSION_SECRET=%s\n' "$DATABASE_URL" "ci-secret-not-for-prod" > .env.local
+      # db:migrate dùng drizzle-orm migrator (scripts/migrate.mjs) — CÙNG đường đi với production
+      # (Railway preDeployCommand), nên CI kiểm luôn cả bước migrate lúc deploy. ADR-009.
       - name: Migrate (schema + pg_trgm + GIN)
         run: npm run db:migrate
       - name: Seed (dupes có chủ đích + 4 lead injection cho test CSV escape)
@@ -83,14 +85,16 @@ jobs:
       SESSION_SECRET: ci-secret-not-for-prod
       PW_WEB_CMD: npm run start # đã build ở step riêng → webServer chỉ start (không build lại)
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
       - run: npm ci
       - name: Write .env.local
         run: printf 'DATABASE_URL=%s\nSESSION_SECRET=%s\n' "$DATABASE_URL" "$SESSION_SECRET" > .env.local
+      # db:migrate dùng drizzle-orm migrator (scripts/migrate.mjs) — CÙNG đường đi với production
+      # (Railway preDeployCommand), nên CI kiểm luôn cả bước migrate lúc deploy. ADR-009.
       - name: Migrate (schema + pg_trgm + GIN)
         run: npm run db:migrate
       - name: Seed
@@ -101,7 +105,7 @@ jobs:
         run: npm run build
       - name: Run e2e
         run: npx playwright test
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
