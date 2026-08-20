@@ -6,6 +6,9 @@ on:
   pull_request:
 
 jobs:
+  # Nhanh, không cần DB: lint + typecheck + unit test + build.
+  # `npm run test` cũng nạp các integration test nhưng chúng TỰ SKIP khi thiếu DATABASE_URL
+  # (describe.skipIf(!hasDb)) — chỉ phần upload-limit (không chạm DB) chạy ở đây.
   checks:
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +23,87 @@ jobs:
       - run: npm run test
       - run: npm run build
 
-  # Batch 2 (luồng F) bổ sung: golden-set integration test (Postgres service container) + e2e Playwright
+  # Integration test chống Postgres THẬT: golden set (exact AC-9 + fuzzy AC-10), kill-worker (AC-14),
+  # hardening (upload limit, CSV injection, audit). pg_trgm + GIN đến từ migration 0001.
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: leadflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/leadflow_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # .env.local để cả drizzle-kit (migrate) và `npm run seed` (--env-file=.env.local) đều thấy DB.
+      - name: Write .env.local
+        run: printf 'DATABASE_URL=%s\nSESSION_SECRET=%s\n' "$DATABASE_URL" "ci-secret-not-for-prod" > .env.local
+      - name: Migrate (schema + pg_trgm + GIN)
+        run: npm run db:migrate
+      - name: Seed (dupes có chủ đích + 4 lead injection cho test CSV escape)
+        run: npm run seed
+      - name: Integration + unit tests
+        run: npm run test
+
+  # e2e Playwright: login demo → import CSV mẫu → thấy leads → chấm rule → export escape formula.
+  # Server dưới test do playwright.config.ts bật (`npm run start`, prod build). pg-boss boot cùng process.
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: leadflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/leadflow_test
+      SESSION_SECRET: ci-secret-not-for-prod
+      PW_WEB_CMD: npm run start # đã build ở step riêng → webServer chỉ start (không build lại)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Write .env.local
+        run: printf 'DATABASE_URL=%s\nSESSION_SECRET=%s\n' "$DATABASE_URL" "$SESSION_SECRET" > .env.local
+      - name: Migrate (schema + pg_trgm + GIN)
+        run: npm run db:migrate
+      - name: Seed
+        run: npm run seed
+      - name: Install Playwright chromium
+        run: npx playwright install --with-deps chromium
+      - name: Build (prod)
+        run: npm run build
+      - name: Run e2e
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
