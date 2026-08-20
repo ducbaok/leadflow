@@ -11,6 +11,8 @@ Next.js + pg-boss chạy CÙNG process (boot qua `src/instrumentation.ts`), depl
 ## ADR-003 — Idempotency là thiết kế, không phải may mắn (2026-08-19)
 Mọi bước import set-based + upsert: job chết giữa chừng → chạy lại từ đầu vô hại (brief §7.3). Unique index trên `email_normalized` bao gồm CẢ lead archived; import trúng email của bản archived sẽ redirect nguồn qua `merged_into_id` → không hồi sinh dupe đã merge (câu #7 brief §4).
 
+**Bằng chứng hồi quy**: `tests/integration/kill-worker.test.ts` (AC-14) — SIGKILL tiến trình import THẬT giữa chừng (`status='processing'`) rồi chạy lại, kết quả cuối hội tụ đúng số lead/nguồn tính bằng chính `normalizeMappedRow` của luồng A.
+
 ## ADR-004 — Ngôn ngữ UI: tiếng Anh (2026-08-19)
 Portfolio hướng cả nhà tuyển dụng quốc tế; dữ liệu demo và cột `reason` của AI giữ tiếng Việt để thể hiện xử lý tiếng Việt (fold dấu). Tài liệu nội bộ (SoT) tiếng Việt.
 

@@ -10,7 +10,7 @@
 - Idempotency: import lại cùng file → 0 lead mới; `lead_sources` vẫn ghi batch mới.
 - Chiếm ~80% giá trị dedupe (brief §3.3).
 
-## Tầng 2 — Fuzzy flag (job `dedupe:scan`, luồng D)
+## Tầng 2 — Fuzzy flag (job `dedupe.scan`, luồng D)
 
 ### Sinh candidate pairs (set-based trong Postgres, KHÔNG app-side)
 
