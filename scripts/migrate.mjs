@@ -6,6 +6,7 @@
  *
  * Dùng: npm run db:migrate   (local đọc .env.local; Railway đọc env của service)
  */
+import { fileURLToPath } from 'node:url'
 import { drizzle } from 'drizzle-orm/postgres-js'
 import { migrate } from 'drizzle-orm/postgres-js/migrator'
 import postgres from 'postgres'
@@ -20,7 +21,10 @@ if (!url) {
 const sql = postgres(url, { max: 1, prepare: false, onnotice: () => {} })
 
 try {
-  await migrate(drizzle(sql), { migrationsFolder: './drizzle' })
+  // Đường dẫn suy từ vị trí FILE này, không phải cwd: Railway pre-deploy không đảm bảo
+  // chạy ở WORKDIR của image.
+  const migrationsFolder = fileURLToPath(new URL('../drizzle', import.meta.url))
+  await migrate(drizzle(sql), { migrationsFolder })
   console.log('✓ Migrations đã áp dụng')
 } catch (err) {
   console.error('✗ Migrate thất bại:', err)
