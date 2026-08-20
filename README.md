@@ -4,7 +4,7 @@ Lead-generation automation: **import messy CSVs → deduplicate → score (rules
 
 A portfolio project built to show engineering judgment, not feature count: one deep module (the dedupe engine), a disciplined LLM integration, and an honest account of everything that was deliberately cut.
 
-**Live demo:** <!-- DEMO_URL --> _(deploying — link lands here)_ · one click to enter, no signup
+**Live demo:** https://leadflow-production-56de.up.railway.app — one click to enter, no sign-up
 **Docs:** [Project brief](PROJECT-BRIEF.md) · [Source-of-truth specs](docs/sot/) · [Decision log](docs/sot/90-decisions.md) · [Deploy runbook](docs/deploy.md)
 
 ![LeadFlow demo — one-click login, lead table with rule and AI scores side by side, duplicate review queue, scoring settings, import wizard](docs/demo.gif)

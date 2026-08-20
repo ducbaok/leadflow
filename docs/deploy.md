@@ -36,6 +36,7 @@ Không đặt `PORT`: Dockerfile đã đặt 3000 và Railway tự map.
 ## 3. Domain
 
 Service → Settings → Networking → **Generate Domain**. Đây là link dán vào README.
+Bản đang chạy: https://leadflow-production-56de.up.railway.app
 
 ## 4. Deploy
 
@@ -75,7 +76,9 @@ BASE=https://<domain> node scripts/verify-acceptance.mjs
 
 | Triệu chứng | Nguyên nhân hay gặp |
 |---|---|
-| Deploy fail ở preDeploy | `DATABASE_URL` sai, hoặc dùng transaction pooler 6543 (không hỗ trợ prepared statement / session) |
+| Deploy fail ở preDeploy, log `TypeError: Invalid URL` | **Giá trị env dính dấu nháy.** Railway KHÔNG bóc `"` như file `.env` — dán `"postgresql://…"` vào ô Variables thì dấu nháy thành một phần của giá trị. Local không lộ vì Node `--env-file` và Next đều bóc nháy. Kiểm cả 7 biến, không chỉ `DATABASE_URL` |
+| Deploy fail ở preDeploy, log `DATABASE_URL chưa được đặt` | Biến chưa vào service, hoặc thêm sau khi deploy đã chạy → Redeploy |
+| Deploy fail ở preDeploy, lỗi kết nối | Dùng transaction pooler 6543 thay vì session pooler 5432, hoặc sai mật khẩu (mật khẩu có ký tự mã hoá URL — giữ nguyên từng ký tự) |
 | Healthcheck đỏ, log `db: down` | Supabase project bị pause, hoặc IP allowlist |
 | `/api/health` trả `boss: "down"` | pg-boss không start được → job import/dedupe/scoring nằm im. Xem log container |
 | Nút "Score with AI" trả 429 | Đúng thiết kế — `AI_RUN_COOLDOWN_SECONDS` đang chặn (ADR-010) |
