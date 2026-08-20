@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm'
-import { getDb } from '@/db/client'
+import { getDb, type DbOrTx } from '@/db/client'
 import { logAudit } from '@/lib/audit'
 import { DEDUPE_THRESHOLDS, NAME_PRUNE_THRESHOLD } from './constants'
 
@@ -20,10 +20,11 @@ import { DEDUPE_THRESHOLDS, NAME_PRUNE_THRESHOLD } from './constants'
  * - Chỉ xét lead active (`archived_at IS NULL`): bản đã archive sau merge không sinh cặp mới.
  *
  * @param batchId thiếu = quét toàn cục; có = chỉ cặp có ít nhất một lead thuộc batch (rẻ khi import).
+ * @param db executor tùy chọn — integration test (luồng F) truyền transaction của nó vào để scan
+ *   thấy dữ liệu chưa commit và rollback sạch; mặc định pool app (transaction lồng = savepoint).
  * @returns số cặp MỚI được flag.
  */
-export async function scanForDuplicates(batchId?: string): Promise<number> {
-  const db = getDb()
+export async function scanForDuplicates(batchId?: string, db: DbOrTx = getDb()): Promise<number> {
   const { T1_NAME, T1_COMPANY, T2_NAME, T2_COMPANY } = DEDUPE_THRESHOLDS
 
   return db.transaction(async (tx) => {

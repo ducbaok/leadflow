@@ -1,13 +1,10 @@
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { scanForDuplicates } from '@/lib/dedupe/scan'
+import type { Db } from './db'
 
-// Seam cho AC-10 phần "scan THẬT của luồng D".
-// Luồng D (Batch 2) viết fuzzy dedupe trên branch riêng — CHƯA merge vào stream/f-tests.
-// Khi chưa merge: dedupeScanImplemented()=false → describe gated trong golden-fuzzy.test.ts tự skip
-// (không đỏ CI). Khi D merge (thêm src/lib/dedupe/ + src/app/api/dedupe/scan/route.ts):
-//   1. Gate lật true, block "Stream D scan" chạy.
-//   2. Người tích hợp nối runDedupeScan() với scan thật của D (đúng 1 chỗ, xem TODO bên dưới).
-// Không import module của D ở đây để `npm run typecheck` không vỡ khi module chưa tồn tại.
+// Seam cho AC-10 phần "scan THẬT của luồng D" — ĐÃ NỐI khi merge Batch 2.
+// Gate giữ lại để suite tự skip nếu module dedupe bị gỡ (an toàn hơn là đỏ khó hiểu).
 
 export function dedupeScanImplemented(): boolean {
   const root = process.cwd()
@@ -18,13 +15,10 @@ export function dedupeScanImplemented(): boolean {
 }
 
 /**
- * Chạy fuzzy scan THẬT của luồng D để đổ candidate vào `dedupe_pairs`.
- * TODO(khi luồng D merge): thay thân hàm bằng lời gọi scan thật, ví dụ:
- *   const mod = await import(['@/lib/dedupe', 'scan'].join('/')) // specifier động → tsc không resolve sớm
- *   await mod.scanForDuplicates(db)
- * (specifier viết động để typecheck không vỡ trước khi D merge.)
+ * Chạy fuzzy scan THẬT của luồng D (quét toàn cục) trên executor của test — truyền transaction
+ * của withRollback vào để scan thấy leads chưa commit và mọi dedupe_pairs sinh ra bị rollback sạch.
+ * (scanForDuplicates mở transaction lồng → savepoint trong tx của test.)
  */
-export async function runDedupeScan(db: unknown): Promise<void> {
-  void db // sẽ truyền cho scan thật của D khi nối (xem TODO trên)
-  throw new Error('runDedupeScan chưa nối với luồng D — xem tests/integration/helpers/dedupe-adapter.ts')
+export async function runDedupeScan(db: Db): Promise<void> {
+  await scanForDuplicates(undefined, db)
 }
